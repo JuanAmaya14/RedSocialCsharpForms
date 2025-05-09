@@ -1,0 +1,209 @@
+﻿namespace RedSocial.Interfaz
+{
+    partial class Registro
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtContrasenha = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btAtras = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.txtConfirmarContra = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(47, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(171, 112);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(209, 30);
+            this.txtNombre.TabIndex = 1;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(171, 173);
+            this.txtTelefono.MaxLength = 10;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(209, 30);
+            this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(47, 178);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Telefono";
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Location = new System.Drawing.Point(171, 231);
+            this.txtCorreo.MaxLength = 255;
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(279, 30);
+            this.txtCorreo.TabIndex = 5;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(56, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Correo";
+            // 
+            // txtContrasenha
+            // 
+            this.txtContrasenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenha.Location = new System.Drawing.Point(171, 299);
+            this.txtContrasenha.MaxLength = 255;
+            this.txtContrasenha.Name = "txtContrasenha";
+            this.txtContrasenha.PasswordChar = '*';
+            this.txtContrasenha.Size = new System.Drawing.Size(209, 30);
+            this.txtContrasenha.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 302);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Contraseña";
+            // 
+            // btAtras
+            // 
+            this.btAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAtras.Location = new System.Drawing.Point(12, 12);
+            this.btAtras.Name = "btAtras";
+            this.btAtras.Size = new System.Drawing.Size(111, 48);
+            this.btAtras.TabIndex = 8;
+            this.btAtras.Text = "Atras";
+            this.btAtras.UseVisualStyleBackColor = true;
+            this.btAtras.Click += new System.EventHandler(this.btAtras_Click);
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(155, 381);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(144, 46);
+            this.btnRegistrar.TabIndex = 9;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // txtConfirmarContra
+            // 
+            this.txtConfirmarContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContra.Location = new System.Drawing.Point(547, 299);
+            this.txtConfirmarContra.MaxLength = 255;
+            this.txtConfirmarContra.Name = "txtConfirmarContra";
+            this.txtConfirmarContra.PasswordChar = '*';
+            this.txtConfirmarContra.Size = new System.Drawing.Size(209, 30);
+            this.txtConfirmarContra.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(411, 299);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(119, 50);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Confirmar\r\ncontraseña\r\n";
+            // 
+            // Registro
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtConfirmarContra);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.btAtras);
+            this.Controls.Add(this.txtContrasenha);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtCorreo);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Name = "Registro";
+            this.Text = "Registro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registro_FormClosing);
+            this.Load += new System.EventHandler(this.Registro_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtContrasenha;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btAtras;
+        private System.Windows.Forms.Button btnRegistrar;
+        private System.Windows.Forms.TextBox txtConfirmarContra;
+        private System.Windows.Forms.Label label5;
+    }
+}

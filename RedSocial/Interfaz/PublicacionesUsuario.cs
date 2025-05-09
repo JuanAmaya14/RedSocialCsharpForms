@@ -1,0 +1,39 @@
+﻿
+using RedSocial.Mostrar_Publicaciones;
+using System;
+using System.Windows.Forms;
+
+namespace RedSocial.Interfaz
+{
+    public partial class PublicacionesUsuario : Form
+    {
+        private MostrarPublicaciones mostrarPublicaciones = new MostrarPublicaciones();
+        private string nombre;
+        private Perfil perfil;
+
+
+        public PublicacionesUsuario(Perfil perfil, string nombre)
+        {
+            InitializeComponent();
+            this.nombre = nombre;
+            this.perfil = perfil;
+        }
+
+        private void PublicacionesUsuario_Load(object sender, EventArgs e)
+        {
+            mostrarPublicaciones.MostrarPublicacionesFuncion(flpPublicaciones, nombre);
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.perfil.Show();
+
+        }
+
+        private void PublicacionesUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
