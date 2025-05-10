@@ -49,10 +49,8 @@ C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\ConexionAMySQL.Interfac
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.Comentar.resources
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.CrearPost.resources
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.InicioSesion.resources
-C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.InputPerfil.resources
+C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.InputPerfiloPublicacion.resources
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.Perfil.resources
-C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.PreguntaBorrarUsuario.resources
-C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.PreguntaCierreSesion.resources
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.Principal.resources
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.PublicacionesUsuario.resources
 C:\Users\User\source\repos\RedSocial\RedSocial\obj\Debug\RedSocial.Interfaz.Registro.resources

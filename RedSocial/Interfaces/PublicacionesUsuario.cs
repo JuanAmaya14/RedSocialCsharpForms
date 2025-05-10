@@ -9,14 +9,14 @@ namespace RedSocial.Interfaz
     {
         private MostrarPublicaciones mostrarPublicaciones = new MostrarPublicaciones();
         private string nombre;
-        private Perfil perfil;
+        private Form formAntearior;
 
 
-        public PublicacionesUsuario(Perfil perfil, string nombre)
+        public PublicacionesUsuario(Form formAntearior, string nombre)
         {
             InitializeComponent();
             this.nombre = nombre;
-            this.perfil = perfil;
+            this.formAntearior = formAntearior;
             InitializeTooltips();
         }
 
@@ -34,7 +34,7 @@ namespace RedSocial.Interfaz
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.perfil.Show();
+            this.formAntearior.Show();
 
         }
 

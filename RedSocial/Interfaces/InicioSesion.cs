@@ -35,7 +35,7 @@ namespace RedSocial
 
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(contrasenha))
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
+                Utilidad.MostrarMensajeAdvertencia("Por favor, complete todos los campos.");
                 return;
             }
 
@@ -44,7 +44,7 @@ namespace RedSocial
             if (usuario != null)
             {
                 SesionUsuario.IniciarSesion(usuario);
-                MessageBox.Show("Bienvenido " + usuario.Nombre);
+                Utilidad.MostrarMensajeConfirmacion("Bienvenido " + usuario.Nombre);
                 txtNombre.Clear();
                 txtContrasenha.Clear();
                 this.Hide();
@@ -53,7 +53,7 @@ namespace RedSocial
             }
             else
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                Utilidad.MostrarMensajeError("Usuario o contraseña incorrectos");
                 txtContrasenha.Clear();
                 txtNombre.Clear();
             }

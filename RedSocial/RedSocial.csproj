@@ -243,76 +243,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionBD.cs" />
+    <Compile Include="Utilidad\Utilidad.cs" />
     <None Include="Config\ParametrosConexion.cs.ejemplo" />
     <Compile Include="Config\ParametrosConexion.cs" />
     <Compile Include="Controladores\ControllerAuditoria.cs" />
     <Compile Include="Controladores\ControllerComentario.cs" />
     <Compile Include="Controladores\ControllerPublicacion.cs" />
     <Compile Include="Controladores\ControllerUsuario.cs" />
-    <Compile Include="Interfaz\Auditoria.cs">
+    <Compile Include="Interfaces\Auditoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Auditoria.Designer.cs">
+    <Compile Include="Interfaces\Auditoria.Designer.cs">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\CrearPost.cs">
+    <Compile Include="Interfaces\CrearPost.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\CrearPost.Designer.cs">
+    <Compile Include="Interfaces\CrearPost.Designer.cs">
       <DependentUpon>CrearPost.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Comentar.cs">
+    <Compile Include="Interfaces\Comentar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Comentar.Designer.cs">
+    <Compile Include="Interfaces\Comentar.Designer.cs">
       <DependentUpon>Comentar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\PreguntaCierreSesion.cs">
+    <Compile Include="Interfaces\InputPerfiloPublicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\PreguntaCierreSesion.Designer.cs">
-      <DependentUpon>PreguntaCierreSesion.cs</DependentUpon>
+    <Compile Include="Interfaces\InputPerfiloPublicacion.Designer.cs">
+      <DependentUpon>InputPerfiloPublicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\PreguntaBorrarUsuario.cs">
+    <Compile Include="Interfaces\PublicacionesUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\PreguntaBorrarUsuario.Designer.cs">
-      <DependentUpon>PreguntaBorrarUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaz\InputPerfil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\InputPerfil.Designer.cs">
-      <DependentUpon>InputPerfil.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaz\PublicacionesUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\PublicacionesUsuario.Designer.cs">
+    <Compile Include="Interfaces\PublicacionesUsuario.Designer.cs">
       <DependentUpon>PublicacionesUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Perfil.cs">
+    <Compile Include="Interfaces\Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Perfil.Designer.cs">
+    <Compile Include="Interfaces\Perfil.Designer.cs">
       <DependentUpon>Perfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Principal.cs">
+    <Compile Include="Interfaces\Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Principal.Designer.cs">
+    <Compile Include="Interfaces\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Registro.cs">
+    <Compile Include="Interfaces\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Registro.Designer.cs">
+    <Compile Include="Interfaces\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\InicioSesion.cs">
+    <Compile Include="Interfaces\InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\InicioSesion.Designer.cs">
+    <Compile Include="Interfaces\InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Comentario.cs" />
@@ -322,37 +311,31 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesion\SesionUsuario.cs" />
-    <EmbeddedResource Include="Interfaz\Auditoria.resx">
+    <EmbeddedResource Include="Interfaces\Auditoria.resx">
       <DependentUpon>Auditoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Comentar.resx">
+    <EmbeddedResource Include="Interfaces\Comentar.resx">
       <DependentUpon>Comentar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\CrearPost.resx">
+    <EmbeddedResource Include="Interfaces\CrearPost.resx">
       <DependentUpon>CrearPost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InicioSesion.resx">
+    <EmbeddedResource Include="Interfaces\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\InputPerfil.resx">
-      <DependentUpon>InputPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaces\InputPerfiloPublicacion.resx">
+      <DependentUpon>InputPerfiloPublicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Perfil.resx">
+    <EmbeddedResource Include="Interfaces\Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\PreguntaBorrarUsuario.resx">
-      <DependentUpon>PreguntaBorrarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\PreguntaCierreSesion.resx">
-      <DependentUpon>PreguntaCierreSesion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Principal.resx">
+    <EmbeddedResource Include="Interfaces\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\PublicacionesUsuario.resx">
+    <EmbeddedResource Include="Interfaces\PublicacionesUsuario.resx">
       <DependentUpon>PublicacionesUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Registro.resx">
+    <EmbeddedResource Include="Interfaces\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

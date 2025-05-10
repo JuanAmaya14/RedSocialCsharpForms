@@ -33,12 +33,12 @@
             this.publicarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoPostToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administradorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.auditoriasUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,13 @@
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
+            // perfilToolStripMenuItem
+            // 
+            this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
+            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.perfilToolStripMenuItem.Text = "Perfil";
+            this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
+            // 
             // buscarPublicacionDeUnUsuarioToolStripMenuItem
             // 
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Name = "buscarPublicacionDeUnUsuarioToolStripMenuItem";
@@ -107,14 +114,14 @@
             // buscarUsuarioToolStripMenuItem
             // 
             this.buscarUsuarioToolStripMenuItem.Name = "buscarUsuarioToolStripMenuItem";
-            this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.buscarUsuarioToolStripMenuItem.Text = "Buscar usuario";
             this.buscarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.buscarUsuarioToolStripMenuItem_Click);
             // 
             // auditoriasUsuarioToolStripMenuItem
             // 
             this.auditoriasUsuarioToolStripMenuItem.Name = "auditoriasUsuarioToolStripMenuItem";
-            this.auditoriasUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.auditoriasUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.auditoriasUsuarioToolStripMenuItem.Text = "Auditorias usuario";
             this.auditoriasUsuarioToolStripMenuItem.Click += new System.EventHandler(this.auditoriasUsuarioToolStripMenuItem_Click);
             // 
@@ -124,13 +131,6 @@
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
-            // 
-            // perfilToolStripMenuItem
-            // 
-            this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.perfilToolStripMenuItem.Text = "Perfil";
-            this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
             // Principal
             // 

@@ -1,6 +1,6 @@
 ﻿namespace RedSocial.Interfaz
 {
-    partial class InputPerfil
+    partial class InputPerfiloPublicacion
     {
         /// <summary>
         /// Required designer variable.

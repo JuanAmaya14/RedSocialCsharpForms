@@ -11,7 +11,7 @@ namespace RedSocial
     {
         private ConexionBD conexion = new ConexionBD();
 
-        public string Insertar(Usuario usuario)
+        public bool Insertar(Usuario usuario)
         {
             try
             {
@@ -28,16 +28,19 @@ namespace RedSocial
 
 
                     comando.ExecuteNonQuery();
-                    return "Usuario registrado correctamente, por favor inicie sesion";
+                    Utilidad.MostrarMensajeConfirmacion("Usuario registrado correctamente, por favor inicie sesion");
+
+                    return true;
                 }
             }
             catch (MySqlException ex)
             {
-                return ex.Message;
+                Utilidad.MostrarMensajeError("Error al registrar el usuario: " + ex.Message);
+                return false;
             }
         }
 
-        public (string, bool) Editar(Usuario usuario)
+        public bool Editar(Usuario usuario)
         {
             try
             {
@@ -54,12 +57,14 @@ namespace RedSocial
                     comando.Parameters.AddWithValue("p_administrador", usuario.Administrador);
 
                     comando.ExecuteNonQuery();
-                    return ("Fue actualizado correctamente.", true);
+                    Utilidad.MostrarMensajeConfirmacion("Usuario actualizado correctamente");
+                    return true;
                 }
             }
             catch (MySqlException ex)
             {
-                return (ex.Message, false);
+                Utilidad.MostrarMensajeError("Error al actualizar el usuario: " + ex.Message);
+                return false;
             }
         }
 

@@ -17,12 +17,34 @@ namespace RedSocial.Interfaz
         private Principal principal;
         private string patronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
         private MostrarPublicaciones mostrarPublicaciones = new MostrarPublicaciones();
+        private InicioSesion inicioSesion;
 
-        public Perfil(Principal principal, string nombre)
+        public Perfil(Principal principal, string nombre, InicioSesion inicioSesion = null)
         {
             InitializeComponent();
             this.nombre = nombre;
             this.principal = principal;
+            this.inicioSesion = inicioSesion;
+
+            radioContraNo.Checked = true;
+
+            usuario = controllerUsuario.MostrarNombre(nombre);
+
+            if (usuario == null)
+            {
+                Utilidad.MostrarMensajeInformacion("No se encontro el usuario en la base de datos.");
+                return;
+            }
+
+            CompletarDatos();
+
+            if (!SesionUsuario.Administrador)
+            {
+                groupBoxAdministrador.Visible = false;
+            }
+
+
+            lblFecha.Text = $"Fecha de creación: {usuario.FechaCreacion}";
 
             InitializeTooltips();
         }
@@ -40,25 +62,6 @@ namespace RedSocial.Interfaz
             toolTip.SetToolTip(txtContrasenhaActual, "Escribe tu contraseña actual");
             toolTip.SetToolTip(txtContrasenhaNueva, "Escribe la nueva contraseña");
             toolTip.SetToolTip(txtConfirmarContra, "Escribe la nueva contraseña nuevamente");
-        }
-
-        private void Perfil_Load(object sender, EventArgs e)
-        {
-            usuario = nombre == SesionUsuario.Nombre ? GetUsuarioSesion() : controllerUsuario.MostrarNombre(nombre);
-            if (!SesionUsuario.Administrador)
-            {
-                groupBoxAdministrador.Visible = false;
-            }
-
-            CompletarDatos();
-            lblFecha.Text = $"Fecha de creación: {usuario.FechaCreacion}";
-        }
-
-        private Usuario GetUsuarioSesion()
-        {
-            return new Usuario(SesionUsuario.IdUsuario, SesionUsuario.Nombre, SesionUsuario.Telefono,
-                               SesionUsuario.Correo, SesionUsuario.Contrasenha, SesionUsuario.Administrador,
-                               SesionUsuario.FechaCreacion);
         }
 
         private void CompletarDatos()
@@ -89,7 +92,7 @@ namespace RedSocial.Interfaz
 
             if (!HayCambios(nombre, telefono, correo, nueva, admin))
             {
-                MostrarMensaje("No se han realizado cambios en los datos del usuario");
+                Utilidad.MostrarMensajeInformacion("No se han realizado cambios en los datos del usuario");
                 return;
             }
 
@@ -102,7 +105,7 @@ namespace RedSocial.Interfaz
             {
                 if (nueva != confirmacion)
                 {
-                    MostrarMensaje("La nueva contraseña y su confirmación no coinciden.");
+                    Utilidad.MostrarMensajeInformacion("Por favor, verifica que ambas contraseñas sean iguales.");
                     return;
                 }
                 nuevaHash = BCrypt.Net.BCrypt.HashPassword(nueva);
@@ -111,8 +114,8 @@ namespace RedSocial.Interfaz
             if (ConfirmarModificacion())
             {
                 usuarioModificado = new Usuario(usuario.IdUsuario, nombre, telefono, correo, nuevaHash, admin, usuario.FechaCreacion);
-                var resultado = controllerUsuario.Editar(usuarioModificado);
-                if (resultado.Item2)
+                bool resultado = controllerUsuario.Editar(usuarioModificado);
+                if (resultado)
                 {
                     if (usuario.IdUsuario == SesionUsuario.IdUsuario)
                         SesionUsuario.IniciarSesion(usuarioModificado);
@@ -122,7 +125,6 @@ namespace RedSocial.Interfaz
                     usuarioModificado = usuario;
                     CompletarDatos();
                 }
-                MostrarMensaje(resultado.Item1);
             }
         }
 
@@ -130,7 +132,7 @@ namespace RedSocial.Interfaz
         {
             if (!Regex.IsMatch(correo, patronCorreo))
             {
-                MostrarMensaje("Correo inválido.");
+                Utilidad.MostrarMensajeAdvertencia("El correo ingresado no es válido. Por favor, verifica el formato.");
                 return false;
             }
             return true;
@@ -145,13 +147,15 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(actual))
             {
-                MostrarMensaje(mensaje);
+                Utilidad.MostrarMensajeAdvertencia(mensaje);
+                LimpiarCampos();
                 return false;
             }
 
             if (!BCrypt.Net.BCrypt.Verify(actual, SesionUsuario.Contrasenha))
             {
-                MostrarMensaje("La contraseña actual no es correcta.");
+                Utilidad.MostrarMensajeError("La contraseña actual no es correcta.");
+                LimpiarCampos();
                 return false;
             }
             return true;
@@ -167,12 +171,6 @@ namespace RedSocial.Interfaz
         {
             return nombre != usuario.Nombre || telefono != usuario.Telefono || correo != usuario.Correo ||
                    !string.IsNullOrWhiteSpace(nueva) || admin != usuario.Administrador;
-        }
-
-        private void MostrarMensaje(string mensaje)
-        {
-            MessageBox.Show(mensaje);
-            LimpiarCampos();
         }
 
         private void LimpiarCampos()
@@ -191,9 +189,35 @@ namespace RedSocial.Interfaz
 
         private void btnBorrarUsuario_Click(object sender, EventArgs e)
         {
-            PreguntaBorrarUsuario preguntaBorrarUsuario = new PreguntaBorrarUsuario(usuario, this, principal, null);
-            preguntaBorrarUsuario.ShowDialog();
+            string mensaje = usuario.IdUsuario == SesionUsuario.IdUsuario
+                ? "¿Está seguro que desea eliminar su cuenta?"
+                : $"¿Está seguro que desea eliminar al usuario {usuario.Nombre}?";
+
+            DialogResult result = MessageBox.Show(mensaje, "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                if (SesionUsuario.Administrador && usuario.IdUsuario != SesionUsuario.IdUsuario)
+                {
+                    controllerUsuario.Eliminar(usuario.IdUsuario);
+                    MessageBox.Show($"{usuario.Nombre} ha sido eliminado correctamente.");
+
+                    this.Hide();
+                    mostrarPublicaciones.MostrarPublicacionesFuncion(principal.flpPublicaciones);
+                    this.principal.Show();
+                }
+                else
+                {
+                    controllerUsuario.Eliminar(usuario.IdUsuario);
+                    SesionUsuario.CerrarSesion();
+                    MessageBox.Show($"{usuario.Nombre} ha sido eliminado correctamente.");
+
+                    this.Hide();
+                    this.inicioSesion.Show();
+                }
+            }
         }
+
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {

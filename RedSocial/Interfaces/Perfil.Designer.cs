@@ -329,7 +329,6 @@
             this.Name = "Perfil";
             this.Text = "Perfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Perfil_FormClosing);
-            this.Load += new System.EventHandler(this.Perfil_Load);
             this.groupBoxAdministrador.ResumeLayout(false);
             this.groupBoxAdministrador.PerformLayout();
             this.groupBox1.ResumeLayout(false);

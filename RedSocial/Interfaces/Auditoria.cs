@@ -68,7 +68,7 @@ namespace ConexionAMySQL.Interfaces
             else
             {
 
-                MessageBox.Show("No se encontró el usuario con ID: " + id);
+                Utilidad.MostrarMensajeInformacion($"No se encontro ningun usuario con el ID: {id}.");
 
             }
         }
@@ -86,8 +86,7 @@ namespace ConexionAMySQL.Interfaces
             else
             {
 
-                MessageBox.Show("El campo del id esta vacio");
-
+                Utilidad.MostrarMensajeInformacion("El campo del ID esta vacio.");
 
             }
 

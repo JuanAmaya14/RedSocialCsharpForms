@@ -34,13 +34,23 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(contenido))
             {
-                MessageBox.Show("Por favor, complete el contenido del post.");
+                Utilidad.MostrarMensajeAdvertencia("El contenido no puede estar vacío.");
                 return;
             }
 
             string mensaje = controllerPublicacion.Insertar(new Publicacion(SesionUsuario.IdUsuario, contenido));
 
-            MessageBox.Show(mensaje);
+            if (mensaje == "Publicacion registrada correctamente")
+            {
+                MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtContenido.Clear();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al registrar la publicacion: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             txtContenido.Clear();
             this.Hide();
             mostrarPublicaciones.MostrarPublicacionesFuncion(principal.flpPublicaciones);

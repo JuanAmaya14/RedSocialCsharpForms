@@ -24,7 +24,7 @@ namespace RedSocial.Interfaz
         {
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btnAtras, "Vuelves a la pantalla de inicio de sesion");
-            toolTip.SetToolTip(btnRegistrar, "Te registras si los datos son correctos");\
+            toolTip.SetToolTip(btnRegistrar, "Te registras si los datos son correctos");
             toolTip.SetToolTip(txtNombre, "Escribe tu nombre");
             toolTip.SetToolTip(txtTelefono, "Escribe tu telefono");
             toolTip.SetToolTip(txtCorreo, "Escribe tu correo");
@@ -42,29 +42,27 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(telefono) || string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contrasenha) || string.IsNullOrWhiteSpace(confirmarContrasenha))
             {
-                MessageBox.Show("Por favor, complete todos los campos.");
+                Utilidad.MostrarMensajeAdvertencia("Por favor, complete todos los campos.");
                 return;
             }
 
             if (!Regex.IsMatch(correo, patronCorreo))
             {
-                MessageBox.Show("Correo invalido.");
+                Utilidad.MostrarMensajeAdvertencia("El correo no es valido");
                 return;
             }
 
             if (contrasenha != confirmarContrasenha)
             {
-                MessageBox.Show("Las contraseñas no coinciden.");
+                Utilidad.MostrarMensajeAdvertencia("Las contraseñas no coinciden.");
                 return;
             }
 
             string contrasenhaEncriptada = BCrypt.Net.BCrypt.HashPassword(contrasenha);
 
-            string mensaje = controllerUsuario.Insertar(new Usuario(nombre, telefono, correo, contrasenhaEncriptada));
+            bool resultado = controllerUsuario.Insertar(new Usuario(nombre, telefono, correo, contrasenhaEncriptada));
 
-            MessageBox.Show(mensaje);
-
-            if (mensaje == "Usuario registrado correctamente, por favor inicie sesion")
+            if (resultado)
             {
                 this.Hide();
                 this.inicioSesion.Show();

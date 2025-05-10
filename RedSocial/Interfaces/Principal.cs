@@ -48,11 +48,21 @@ namespace RedSocial.Interfaz
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DialogResult resultado = MessageBox.Show(
+                "¿Está seguro que desea cerrar sesión?",
+                "Cerrar sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
 
-            PreguntaCierreSesion preguntaCierreSesion = new PreguntaCierreSesion(this, inicioSesion);
-            preguntaCierreSesion.ShowDialog();
-
+            if (resultado == DialogResult.Yes)
+            {
+                SesionUsuario.CerrarSesion();
+                this.Hide();
+                inicioSesion.Show();
+            }
         }
+
 
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -68,14 +78,16 @@ namespace RedSocial.Interfaz
 
         private void buscarPublicacionDeUnUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            InputPerfiloPublicacion inputPerfil = new InputPerfiloPublicacion(this, "Publicacion");
+            inputPerfil.ShowDialog();
 
 
         }
 
         private void buscarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InputPerfil inputPerfil = new InputPerfil(this);
-            inputPerfil.ShowDialog();
+            InputPerfiloPublicacion inputPerfiloPublicacion = new InputPerfiloPublicacion(this, "Perfil");
+            inputPerfiloPublicacion.ShowDialog();
         }
 
         private void auditoriasUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
