@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtContrasenha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btAtras = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtConfirmarContra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(47, 112);
+            this.label1.Location = new System.Drawing.Point(206, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(171, 112);
+            this.txtNombre.Location = new System.Drawing.Point(330, 85);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(209, 30);
@@ -64,7 +64,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(171, 173);
+            this.txtTelefono.Location = new System.Drawing.Point(330, 146);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(209, 30);
@@ -75,7 +75,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 178);
+            this.label2.Location = new System.Drawing.Point(206, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 25);
             this.label2.TabIndex = 2;
@@ -84,7 +84,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(171, 231);
+            this.txtCorreo.Location = new System.Drawing.Point(330, 204);
             this.txtCorreo.MaxLength = 255;
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(279, 30);
@@ -95,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(56, 236);
+            this.label3.Location = new System.Drawing.Point(215, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 25);
             this.label3.TabIndex = 4;
@@ -104,7 +104,7 @@
             // txtContrasenha
             // 
             this.txtContrasenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenha.Location = new System.Drawing.Point(171, 299);
+            this.txtContrasenha.Location = new System.Drawing.Point(330, 272);
             this.txtContrasenha.MaxLength = 255;
             this.txtContrasenha.Name = "txtContrasenha";
             this.txtContrasenha.PasswordChar = '*';
@@ -115,27 +115,27 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 302);
+            this.label4.Location = new System.Drawing.Point(179, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 25);
             this.label4.TabIndex = 6;
             this.label4.Text = "Contraseña";
             // 
-            // btAtras
+            // btnAtras
             // 
-            this.btAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAtras.Location = new System.Drawing.Point(12, 12);
-            this.btAtras.Name = "btAtras";
-            this.btAtras.Size = new System.Drawing.Size(111, 48);
-            this.btAtras.TabIndex = 8;
-            this.btAtras.Text = "Atras";
-            this.btAtras.UseVisualStyleBackColor = true;
-            this.btAtras.Click += new System.EventHandler(this.btAtras_Click);
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.Location = new System.Drawing.Point(12, 12);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(111, 48);
+            this.btnAtras.TabIndex = 8;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(155, 381);
+            this.btnRegistrar.Location = new System.Drawing.Point(320, 434);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(144, 46);
             this.btnRegistrar.TabIndex = 9;
@@ -146,7 +146,7 @@
             // txtConfirmarContra
             // 
             this.txtConfirmarContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContra.Location = new System.Drawing.Point(547, 299);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(330, 340);
             this.txtConfirmarContra.MaxLength = 255;
             this.txtConfirmarContra.Name = "txtConfirmarContra";
             this.txtConfirmarContra.PasswordChar = '*';
@@ -157,7 +157,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(411, 299);
+            this.label5.Location = new System.Drawing.Point(194, 340);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 50);
             this.label5.TabIndex = 10;
@@ -167,11 +167,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 512);
             this.Controls.Add(this.txtConfirmarContra);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.btAtras);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.txtContrasenha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCorreo);
@@ -201,7 +201,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtContrasenha;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btAtras;
+        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtConfirmarContra;
         private System.Windows.Forms.Label label5;

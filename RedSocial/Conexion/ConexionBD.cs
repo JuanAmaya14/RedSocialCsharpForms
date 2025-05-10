@@ -1,6 +1,5 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
-using DotNetEnv;
 
 namespace ConexionAMySQL
 {
@@ -8,20 +7,16 @@ namespace ConexionAMySQL
     {
         public ConexionBD()
         {
-            Env.Load();
         }
 
         public MySqlConnection AbrirConexionMySQL()
         {
             try
             {
-                string host = Environment.GetEnvironmentVariable("MYSQL_HOST");
-                string port = Environment.GetEnvironmentVariable("MYSQL_PORT");
-                string database = Environment.GetEnvironmentVariable("MYSQL_DATABASE");
-                string user = Environment.GetEnvironmentVariable("MYSQL_USER");
-                string password = Environment.GetEnvironmentVariable("MYSQL_PASSWORD");
 
-                string cadenaMySQL = $"Server={host};Port={port};Database={database};User={user};Password={password};";
+                //"U" o "H"
+                var config = new ParametrosConexion("H");
+                string cadenaMySQL = config.ObtenerCadenaConexion();
 
                 var conexion = new MySqlConnection(cadenaMySQL);
                 conexion.Open();

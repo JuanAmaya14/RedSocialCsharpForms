@@ -1,0 +1,38 @@
+﻿namespace ConexionAMySQL
+{
+    public class ParametrosConexion
+    {
+        public string Ambiente { get; set; }
+
+        // Propiedades de conexión para la universidad
+        public string MYSQL_HOST_U { get; } = "";
+        public string MYSQL_PORT_U { get; } = "3306";
+        public string MYSQL_DATABASE_U { get; } = "UsuariosForms";
+        public string MYSQL_USER_U { get; } = "";
+        public string MYSQL_PASSWORD_U { get; } = "";
+
+        // Propiedades de conexión para la casa
+        public string MYSQL_HOST_H { get; } = "";
+        public string MYSQL_PORT_H { get; } = "3306";
+        public string MYSQL_DATABASE_H { get; } = "UsuariosForms";
+        public string MYSQL_USER_H { get; } = "";
+        public string MYSQL_PASSWORD_H { get; } = "";
+
+        // Constructor por defecto, que puede establecer el ambiente
+        public ParametrosConexion(string ambiente)
+        {
+            Ambiente = ambiente;
+        }
+
+        public string ObtenerCadenaConexion()
+        {
+            string host = Ambiente == "U" ? MYSQL_HOST_U : MYSQL_HOST_H;
+            string port = Ambiente == "U" ? MYSQL_PORT_U : MYSQL_PORT_H;
+            string database = Ambiente == "U" ? MYSQL_DATABASE_U : MYSQL_DATABASE_H;
+            string user = Ambiente == "U" ? MYSQL_USER_U : MYSQL_USER_H;
+            string password = Ambiente == "U" ? MYSQL_PASSWORD_U : MYSQL_PASSWORD_H;
+
+            return $"Server={host};Port={port};Database={database};User={user};Password={password};";
+        }
+    }
+}

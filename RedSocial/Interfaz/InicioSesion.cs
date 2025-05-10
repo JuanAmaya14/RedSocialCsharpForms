@@ -13,6 +13,11 @@ namespace RedSocial
         public InicioSesion()
         {
             InitializeComponent();
+
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.SetToolTip(btnInicioSesion, "Inicia sesion si los datos son correctos");
+            toolTip.SetToolTip(btnRegistrarse, "Te envia a la pantalla de registro");
         }
 
         private void btnInicioSesion_Click(object sender, EventArgs e)
@@ -59,5 +64,6 @@ namespace RedSocial
         {
             Application.Exit();
         }
+
     }
 }

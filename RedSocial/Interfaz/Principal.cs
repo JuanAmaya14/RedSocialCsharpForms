@@ -16,6 +16,10 @@ namespace RedSocial.Interfaz
         {
             InitializeComponent();
             this.inicioSesion = inicioSesion;
+
+            menuStrip1.ShowItemToolTips = true;
+
+            nuevoPostToolStripMenuItem.ToolTipText = "Crea una nueva publicacion";
         }
 
         private void Principal_Load(object sender, EventArgs e)

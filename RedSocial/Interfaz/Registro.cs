@@ -16,6 +16,11 @@ namespace RedSocial.Interfaz
         {
             InitializeComponent();
             this.inicioSesion = inicioSesion;
+
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.SetToolTip(btnAtras, "Vuelves a la pantalla de inicio de sesion");
+            toolTip.SetToolTip(btnRegistrar, "Te registras si los datos son correctos");
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -57,7 +62,7 @@ namespace RedSocial.Interfaz
             }
         }
 
-        private void btAtras_Click(object sender, EventArgs e)
+        private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.inicioSesion.Show();
