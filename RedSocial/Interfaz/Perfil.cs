@@ -10,74 +10,71 @@ namespace RedSocial.Interfaz
 {
     public partial class Perfil : Form
     {
-        private ControllerUsuario ControllerUsuario = new ControllerUsuario();
-        private Usuario usuario, usuarioModificado;
+        private ControllerUsuario controllerUsuario = new ControllerUsuario();
+        private Usuario usuario;
+        private Usuario usuarioModificado;
         private string nombre;
         private Principal principal;
-        private InicioSesion inicioSesion = null;
         private string patronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
         private MostrarPublicaciones mostrarPublicaciones = new MostrarPublicaciones();
 
-        public Perfil(Principal principal, string nombre, InicioSesion inicioSesion = null)
+        public Perfil(Principal principal, string nombre)
         {
             InitializeComponent();
             this.nombre = nombre;
             this.principal = principal;
-            this.inicioSesion = inicioSesion;
+
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnModificar, "Guarda los cambios realizados");
+            toolTip.SetToolTip(btnAtras, "Regresa a la pantalla anterior");
+            toolTip.SetToolTip(btnPublicaciones, "Muestra las publicaciones del usuario");
+            toolTip.SetToolTip(btnBorrarUsuario, "Elimina el usuario de la base de datos");
+            toolTip.SetToolTip(txtNombre, "Escribe el nuevo nombre de usuario");
+            toolTip.SetToolTip(txtTelefono, "Escribe el nuevo teléfono");
+            toolTip.SetToolTip(txtCorreo, "Escribe el nuevo correo");
+            toolTip.SetToolTip(txtContrasenhaActual, "Escribe tu contraseña actual");
+            toolTip.SetToolTip(txtContrasenhaNueva, "Escribe la nueva contraseña");
+            toolTip.SetToolTip(txtConfirmarContra, "Escribe la nueva contraseña nuevamente");
         }
 
         private void Perfil_Load(object sender, EventArgs e)
         {
-            if (this.nombre == SesionUsuario.Nombre)
+            usuario = nombre == SesionUsuario.Nombre ? GetUsuarioSesion() : controllerUsuario.MostrarNombre(nombre);
+            if (!SesionUsuario.Administrador)
             {
-                usuario = new Usuario(SesionUsuario.IdUsuario, SesionUsuario.Nombre, SesionUsuario.Telefono, SesionUsuario.Correo, SesionUsuario.Contrasenha, SesionUsuario.Administrador, SesionUsuario.FechaCreacion);
+                groupBoxAdministrador.Visible = false;
             }
-            else
-            {
-
-                usuario = ControllerUsuario.MostrarNombre(this.nombre);
-
-            }
-
-            txtContrasenhaActual.Visible = false;
-            lblContrasenhaActual.Visible = false;
-            txtConfirmarContra.Visible = false;
-            lblConfirmarContraNueva.Visible = false;
-            radioContraNo.Enabled = true;
 
             CompletarDatos();
+            lblFecha.Text = $"Fecha de creación: {usuario.FechaCreacion}";
+        }
 
-            lblFecha.Text = "Fecha de creación: " + usuario.FechaCreacion;
-
+        private Usuario GetUsuarioSesion()
+        {
+            return new Usuario(SesionUsuario.IdUsuario, SesionUsuario.Nombre, SesionUsuario.Telefono,
+                               SesionUsuario.Correo, SesionUsuario.Contrasenha, SesionUsuario.Administrador,
+                               SesionUsuario.FechaCreacion);
         }
 
         private void CompletarDatos()
         {
-
             txtNombre.Text = usuario.Nombre;
             txtTelefono.Text = usuario.Telefono;
             txtCorreo.Text = usuario.Correo;
-            if (usuario.Administrador)
-            {
-
-                radioAdminSi.Checked = true;
-                radioAdminNo.Checked = false;
-
-            }
-            else
-            {
-                radioAdminNo.Checked = true;
-                radioAdminSi.Checked = false;
-
-            }
-
+            radioAdminSi.Checked = usuario.Administrador;
+            radioAdminNo.Checked = !usuario.Administrador;
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             mostrarPublicaciones.MostrarPublicacionesFuncion(principal.flpPublicaciones);
-            this.principal.Show();
+            principal.Show();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -85,135 +82,129 @@ namespace RedSocial.Interfaz
             string nombre = txtNombre.Text.Trim();
             string telefono = txtTelefono.Text.Trim();
             string correo = txtCorreo.Text.Trim();
-            string contrasenhaActual = txtContrasenhaActual.Text;
-            string contrasenhaNueva = txtContrasenhaNueva.Text;
-            string contrasenhaNuevaConfirmacion = txtConfirmarContra.Text;
-            bool administrador = radioAdminSi.Checked;
+            string actual = txtContrasenhaActual.Text;
+            string nueva = radioContraSi.Checked ? txtContrasenhaNueva.Text : string.Empty;
+            string confirmacion = radioContraSi.Checked ? txtConfirmarContra.Text : string.Empty;
+            bool admin = radioAdminSi.Checked;
 
-            bool hayCambios = nombre != usuario.Nombre || telefono != usuario.Telefono || correo != usuario.Correo ||
-                      !string.IsNullOrWhiteSpace(contrasenhaNueva) || administrador != usuario.Administrador;
-
-
-            if (!hayCambios)
+            if (!HayCambios(nombre, telefono, correo, nueva, admin))
             {
-                MessageBox.Show("No se han realizado cambios en los datos del usuario");
-                txtContrasenhaActual.Clear();
+                MostrarMensaje("No se han realizado cambios en los datos del usuario");
                 return;
             }
 
+            if (!ValidarCorreo(correo)) return;
+
+            if (!ValidarContraseña(actual)) return;
+
+            string nuevaHash = usuario.Contrasenha;
+            if (radioContraSi.Checked && !string.IsNullOrWhiteSpace(nueva))
+            {
+                if (nueva != confirmacion)
+                {
+                    MostrarMensaje("La nueva contraseña y su confirmación no coinciden.");
+                    return;
+                }
+                nuevaHash = BCrypt.Net.BCrypt.HashPassword(nueva);
+            }
+
+            if (ConfirmarModificacion())
+            {
+                usuarioModificado = new Usuario(usuario.IdUsuario, nombre, telefono, correo, nuevaHash, admin, usuario.FechaCreacion);
+                var resultado = controllerUsuario.Editar(usuarioModificado);
+                if (resultado.Item2)
+                {
+                    if (usuario.IdUsuario == SesionUsuario.IdUsuario)
+                        SesionUsuario.IniciarSesion(usuarioModificado);
+                }
+                else
+                {
+                    usuarioModificado = usuario;
+                    CompletarDatos();
+                }
+                MostrarMensaje(resultado.Item1);
+            }
+        }
+
+        private bool ValidarCorreo(string correo)
+        {
             if (!Regex.IsMatch(correo, patronCorreo))
             {
-                MessageBox.Show("Correo invalido.");
-                return;
+                MostrarMensaje("Correo inválido.");
+                return false;
             }
-
-            if (!SesionUsuario.Administrador || nombre == SesionUsuario.Nombre)
-            {
-                if (string.IsNullOrWhiteSpace(contrasenhaActual))
-                {
-                    MessageBox.Show("Debes ingresar tu contraseña actual para guardar los cambios.");
-                    txtContrasenhaActual.Clear();
-                    return;
-                }
-
-                bool contrasenhaCorrecta = BCrypt.Net.BCrypt.Verify(contrasenhaActual, SesionUsuario.Contrasenha);
-                if (!contrasenhaCorrecta)
-                {
-                    MessageBox.Show("La contraseña actual no es correcta.");
-                    txtContrasenhaActual.Clear();
-                    return;
-                }
-            }
-
-            string nuevaContrasenhaFinal = SesionUsuario.Contrasenha;
-            if (!string.IsNullOrWhiteSpace(contrasenhaNueva))
-            {
-                if (contrasenhaNueva != contrasenhaNuevaConfirmacion)
-                {
-                    MessageBox.Show("La nueva contraseña y su confirmación no coinciden.");
-                    txtContrasenhaActual.Clear();
-                    return;
-                }
-
-                nuevaContrasenhaFinal = BCrypt.Net.BCrypt.HashPassword(contrasenhaNueva);
-            }
-
-            usuarioModificado = new Usuario(usuario.IdUsuario, nombre, telefono, correo, nuevaContrasenhaFinal, administrador, usuario.FechaCreacion);
-
-            btnModificar.Visible = false;
-            lblPregunta.Text = "¿Está seguro que desea modificar tus datos?";
-            lblPregunta.Visible = true;
-            btnSi.Visible = true;
-            btnNo.Visible = true;
+            return true;
         }
 
-        private void btnSi_Click(object sender, EventArgs e)
+        private bool ValidarContraseña(string actual)
         {
-            var resultado = ControllerUsuario.Editar(usuarioModificado);
+            bool esPropioPerfil = usuario.IdUsuario == SesionUsuario.IdUsuario;
+            string mensaje = esPropioPerfil
+                ? "Debes ingresar tu contraseña actual para guardar los cambios."
+                : "Debes ingresar tu contraseña de administrador para confirmar los cambios de otro usuario.";
 
-            if (resultado.Item2)
+            if (string.IsNullOrWhiteSpace(actual))
             {
-                if (usuario.IdUsuario == SesionUsuario.IdUsuario)
-                {
-                    SesionUsuario.IniciarSesion(usuarioModificado);
-                }
+                MostrarMensaje(mensaje);
+                return false;
+            }
 
-                OcultarPregunta();
-                MessageBox.Show(resultado.Item1);
-                txtContrasenhaActual.Clear();
-                txtConfirmarContra.Clear();
-                txtContrasenhaNueva.Clear();
-            }
-            else
+            if (!BCrypt.Net.BCrypt.Verify(actual, SesionUsuario.Contrasenha))
             {
-                usuarioModificado = usuario;
-                CompletarDatos();
-                OcultarPregunta();
-                MessageBox.Show(resultado.Item1);
-                txtContrasenhaActual.Clear();
-                txtConfirmarContra.Clear();
-                txtContrasenhaNueva.Clear();
+                MostrarMensaje("La contraseña actual no es correcta.");
+                return false;
             }
+            return true;
         }
 
-        private void btnNo_Click(object sender, EventArgs e)
+        private bool ConfirmarModificacion()
         {
-            OcultarPregunta();
+            return MessageBox.Show("¿Está seguro que desea modificar los datos?",
+                                   "Confirmar modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes;
+        }
+
+        private bool HayCambios(string nombre, string telefono, string correo, string nueva, bool admin)
+        {
+            return nombre != usuario.Nombre || telefono != usuario.Telefono || correo != usuario.Correo ||
+                   !string.IsNullOrWhiteSpace(nueva) || admin != usuario.Administrador;
+        }
+
+        private void MostrarMensaje(string mensaje)
+        {
+            MessageBox.Show(mensaje);
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtContrasenhaActual.Clear();
+            txtConfirmarContra.Clear();
+            txtContrasenhaNueva.Clear();
         }
 
         private void btnPublicaciones_Click(object sender, EventArgs e)
         {
-            PublicacionesUsuario publicacionesUsuario = new PublicacionesUsuario(this, this.nombre);
-            this.Hide();
+            PublicacionesUsuario publicacionesUsuario = new PublicacionesUsuario(this, nombre);
+            Hide();
             publicacionesUsuario.Show();
         }
 
         private void btnBorrarUsuario_Click(object sender, EventArgs e)
         {
-            PreguntaBorrarUsuario preguntaBorrarUsuario = new PreguntaBorrarUsuario(usuario, this, principal, inicioSesion);
+            PreguntaBorrarUsuario preguntaBorrarUsuario = new PreguntaBorrarUsuario(usuario, this, principal, null);
             preguntaBorrarUsuario.ShowDialog();
         }
 
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            e.Handled = !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
-            string correo = txtCorreo.Text.Trim();
-
-            if (Regex.IsMatch(correo, patronCorreo))
-            {
-                txtCorreo.BackColor = Color.LightGreen;
-            }
-            else
-            {
-                txtCorreo.BackColor = Color.LightCoral;
-            }
+            txtCorreo.BackColor = Regex.IsMatch(txtCorreo.Text.Trim(), patronCorreo)
+                ? Color.LightGreen
+                : Color.LightCoral;
         }
 
         private void Perfil_FormClosing(object sender, FormClosingEventArgs e)
@@ -223,28 +214,20 @@ namespace RedSocial.Interfaz
 
         private void radioContraSi_CheckedChanged(object sender, EventArgs e)
         {
-
-            txtContrasenhaActual.Visible = true;
-            lblContrasenhaActual.Visible = true;
-            txtConfirmarContra.Visible = true;
-            lblConfirmarContraNueva.Visible = true;
+            ToggleContraseñaVisibility(true);
         }
 
         private void radioContraNo_CheckedChanged(object sender, EventArgs e)
         {
-
-            txtContrasenhaActual.Visible = false;
-            lblContrasenhaActual.Visible = false;
-            txtConfirmarContra.Visible = false;
-            lblConfirmarContraNueva.Visible = false;
+            ToggleContraseñaVisibility(false);
         }
 
-        private void OcultarPregunta()
+        private void ToggleContraseñaVisibility(bool isVisible)
         {
-            btnModificar.Visible = true;
-            lblPregunta.Visible = false;
-            btnSi.Visible = false;
-            btnNo.Visible = false;
+            txtContrasenhaNueva.Visible = isVisible;
+            lblContrasenhaNueva.Visible = isVisible;
+            txtConfirmarContra.Visible = isVisible;
+            lblConfirmarContraNueva.Visible = isVisible;
         }
     }
 }

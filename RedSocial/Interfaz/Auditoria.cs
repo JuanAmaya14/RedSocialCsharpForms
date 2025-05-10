@@ -18,6 +18,18 @@ namespace ConexionAMySQL.Interfaces
         {
             InitializeComponent();
             this.principal = principal;
+
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.SetToolTip(btnAtras, "Vuelve a la pantalla principal");
+            toolTip.SetToolTip(btnFiltrar, "Filtra las auditorias por ID");
+            toolTip.SetToolTip(btnMostrarTodos, "Muestra todas las auditorias");
+            toolTip.SetToolTip(txtId, "Ingresa el ID del usuario para filtrar las auditorias");
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

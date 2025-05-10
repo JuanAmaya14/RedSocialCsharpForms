@@ -17,6 +17,13 @@ namespace RedSocial.Interfaz
             InitializeComponent();
             this.nombre = nombre;
             this.perfil = perfil;
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnAtras, "Regresa a la pantalla anterior");
         }
 
         private void PublicacionesUsuario_Load(object sender, EventArgs e)

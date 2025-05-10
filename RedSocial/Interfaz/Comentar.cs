@@ -15,6 +15,18 @@ namespace RedSocial.Interfaz
             InitializeComponent();
 
             this.idPublicacion = idPublicacion;
+
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.SetToolTip(btnPublicarComentario, "Publicar comentario");
+            toolTip.SetToolTip(btnCancelar, "Cancelar publicación");
+            toolTip.SetToolTip(txtComentario, "Escribe tu comentario aquí");
+
         }
 
         private void btnPublicarComentario_Click(object sender, EventArgs e)

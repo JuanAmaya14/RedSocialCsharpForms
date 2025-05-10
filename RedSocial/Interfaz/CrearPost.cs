@@ -16,6 +16,16 @@ namespace RedSocial.Interfaz
         {
             InitializeComponent();
             this.principal = principal;
+
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnPublicar, "Para publicar tu publicacion");
+            toolTip.SetToolTip(btAtras, "Para regresar a la pantalla principal");
+            toolTip.SetToolTip(txtContenido, "Escribe el contenido de tu publicacion");
         }
 
         private void btnPublicar_Click(object sender, EventArgs e)

@@ -17,10 +17,19 @@ namespace RedSocial.Interfaz
             InitializeComponent();
             this.inicioSesion = inicioSesion;
 
-            ToolTip toolTip = new ToolTip();
+            InitializeTooltips();
+        }
 
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btnAtras, "Vuelves a la pantalla de inicio de sesion");
-            toolTip.SetToolTip(btnRegistrar, "Te registras si los datos son correctos");
+            toolTip.SetToolTip(btnRegistrar, "Te registras si los datos son correctos");\
+            toolTip.SetToolTip(txtNombre, "Escribe tu nombre");
+            toolTip.SetToolTip(txtTelefono, "Escribe tu telefono");
+            toolTip.SetToolTip(txtCorreo, "Escribe tu correo");
+            toolTip.SetToolTip(txtContrasenha, "Escribe tu contraseña");
+            toolTip.SetToolTip(txtConfirmarContra, "Escribe tu contraseña de nuevo");
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)

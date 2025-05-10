@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.btnModificar = new System.Windows.Forms.Button();
-            this.lblPregunta = new System.Windows.Forms.Label();
-            this.btnNo = new System.Windows.Forms.Button();
-            this.btnSi = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.txtContrasenhaNueva = new System.Windows.Forms.TextBox();
             this.lblContrasenhaNueva = new System.Windows.Forms.Label();
@@ -61,51 +58,13 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(341, 574);
+            this.btnModificar.Location = new System.Drawing.Point(354, 561);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(122, 52);
             this.btnModificar.TabIndex = 53;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // lblPregunta
-            // 
-            this.lblPregunta.AutoSize = true;
-            this.lblPregunta.BackColor = System.Drawing.SystemColors.Control;
-            this.lblPregunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPregunta.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblPregunta.Location = new System.Drawing.Point(140, 574);
-            this.lblPregunta.Name = "lblPregunta";
-            this.lblPregunta.Size = new System.Drawing.Size(551, 25);
-            this.lblPregunta.TabIndex = 57;
-            this.lblPregunta.Text = "¿Está seguro que desea modificar el usuario con ID:  0?";
-            this.lblPregunta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblPregunta.Visible = false;
-            // 
-            // btnNo
-            // 
-            this.btnNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNo.Location = new System.Drawing.Point(485, 642);
-            this.btnNo.Name = "btnNo";
-            this.btnNo.Size = new System.Drawing.Size(99, 39);
-            this.btnNo.TabIndex = 56;
-            this.btnNo.Text = "No";
-            this.btnNo.UseVisualStyleBackColor = true;
-            this.btnNo.Visible = false;
-            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
-            // 
-            // btnSi
-            // 
-            this.btnSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSi.Location = new System.Drawing.Point(209, 642);
-            this.btnSi.Name = "btnSi";
-            this.btnSi.Size = new System.Drawing.Size(99, 39);
-            this.btnSi.TabIndex = 55;
-            this.btnSi.Text = "Si";
-            this.btnSi.UseVisualStyleBackColor = true;
-            this.btnSi.Visible = false;
-            this.btnSi.Click += new System.EventHandler(this.btnSi_Click);
             // 
             // btnAtras
             // 
@@ -349,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 698);
+            this.ClientSize = new System.Drawing.Size(866, 648);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxAdministrador);
             this.Controls.Add(this.btnBorrarUsuario);
@@ -364,9 +323,6 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.lblPregunta);
-            this.Controls.Add(this.btnNo);
-            this.Controls.Add(this.btnSi);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -386,9 +342,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label lblPregunta;
-        private System.Windows.Forms.Button btnNo;
-        private System.Windows.Forms.Button btnSi;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.TextBox txtContrasenhaNueva;
         private System.Windows.Forms.Label lblContrasenhaNueva;

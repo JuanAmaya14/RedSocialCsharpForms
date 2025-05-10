@@ -17,9 +17,19 @@ namespace RedSocial.Interfaz
             InitializeComponent();
             this.inicioSesion = inicioSesion;
 
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
             menuStrip1.ShowItemToolTips = true;
 
             nuevoPostToolStripMenuItem.ToolTipText = "Crea una nueva publicacion";
+            perfilToolStripMenuItem.ToolTipText = "Muestra tu perfil";
+            buscarPublicacionDeUnUsuarioToolStripMenuItem.ToolTipText = "Busca publicaciones de un usuario";
+            buscarUsuarioToolStripMenuItem.ToolTipText = "Busca un usuario";
+            auditoriasUsuarioToolStripMenuItem.ToolTipText = "Muestra las auditorias de un usuario";
+            cerrarSesionToolStripMenuItem.ToolTipText = "Cierra la sesion actual";
         }
 
         private void Principal_Load(object sender, EventArgs e)

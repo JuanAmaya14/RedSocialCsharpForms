@@ -17,6 +17,18 @@ namespace RedSocial.Interfaz
             InitializeComponent();
 
             this.principal = principal;
+
+            ToolTip toolTip = new ToolTip();
+
+            InitializeTooltips();
+        }
+
+        private void InitializeTooltips()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(btnBuscar, "Buscar usuario");
+            toolTip.SetToolTip(btnCancelar, "Cancelar busqueda");
+            toolTip.SetToolTip(txtNombre, "Ingrese el nombre del usuario que desea buscar");
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
