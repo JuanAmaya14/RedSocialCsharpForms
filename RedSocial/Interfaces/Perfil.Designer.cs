@@ -80,7 +80,7 @@
             // txtContrasenhaNueva
             // 
             this.txtContrasenhaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenhaNueva.Location = new System.Drawing.Point(206, 83);
+            this.txtContrasenhaNueva.Location = new System.Drawing.Point(236, 97);
             this.txtContrasenhaNueva.MaxLength = 255;
             this.txtContrasenhaNueva.Name = "txtContrasenhaNueva";
             this.txtContrasenhaNueva.PasswordChar = '*';
@@ -91,11 +91,11 @@
             // 
             this.lblContrasenhaNueva.AutoSize = true;
             this.lblContrasenhaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContrasenhaNueva.Location = new System.Drawing.Point(1, 83);
+            this.lblContrasenhaNueva.Location = new System.Drawing.Point(231, 69);
             this.lblContrasenhaNueva.Name = "lblContrasenhaNueva";
-            this.lblContrasenhaNueva.Size = new System.Drawing.Size(189, 25);
+            this.lblContrasenhaNueva.Size = new System.Drawing.Size(196, 25);
             this.lblContrasenhaNueva.TabIndex = 64;
-            this.lblContrasenhaNueva.Text = "Contraseña nueva";
+            this.lblContrasenhaNueva.Text = "Contraseña nueva:";
             // 
             // txtCorreo
             // 
@@ -113,9 +113,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(32, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.Size = new System.Drawing.Size(85, 25);
             this.label3.TabIndex = 62;
-            this.label3.Text = "Correo";
+            this.label3.Text = "Correo:";
             // 
             // txtTelefono
             // 
@@ -133,9 +133,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 25);
+            this.label2.Size = new System.Drawing.Size(104, 25);
             this.label2.TabIndex = 60;
-            this.label2.Text = "Telefono";
+            this.label2.Text = "Telefono:";
             // 
             // txtNombre
             // 
@@ -152,14 +152,14 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(23, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.Size = new System.Drawing.Size(94, 25);
             this.label1.TabIndex = 58;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre:";
             // 
             // txtConfirmarContra
             // 
             this.txtConfirmarContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmarContra.Location = new System.Drawing.Point(598, 83);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(511, 97);
             this.txtConfirmarContra.MaxLength = 255;
             this.txtConfirmarContra.Name = "txtConfirmarContra";
             this.txtConfirmarContra.PasswordChar = '*';
@@ -170,16 +170,16 @@
             // 
             this.lblConfirmarContraNueva.AutoSize = true;
             this.lblConfirmarContraNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConfirmarContraNueva.Location = new System.Drawing.Point(462, 61);
+            this.lblConfirmarContraNueva.Location = new System.Drawing.Point(506, 69);
             this.lblConfirmarContraNueva.Name = "lblConfirmarContraNueva";
-            this.lblConfirmarContraNueva.Size = new System.Drawing.Size(119, 100);
+            this.lblConfirmarContraNueva.Size = new System.Drawing.Size(291, 25);
             this.lblConfirmarContraNueva.TabIndex = 66;
-            this.lblConfirmarContraNueva.Text = "Confirmar\r\ncontraseña\r\nnueva\r\n\r\n";
+            this.lblConfirmarContraNueva.Text = "Confirmar contraseña nueva:";
             // 
             // txtContrasenhaActual
             // 
             this.txtContrasenhaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasenhaActual.Location = new System.Drawing.Point(209, 498);
+            this.txtContrasenhaActual.Location = new System.Drawing.Point(216, 495);
             this.txtContrasenhaActual.MaxLength = 255;
             this.txtContrasenhaActual.Name = "txtContrasenhaActual";
             this.txtContrasenhaActual.PasswordChar = '*';
@@ -192,9 +192,9 @@
             this.lblContrasenhaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContrasenhaActual.Location = new System.Drawing.Point(4, 498);
             this.lblContrasenhaActual.Name = "lblContrasenhaActual";
-            this.lblContrasenhaActual.Size = new System.Drawing.Size(181, 25);
+            this.lblContrasenhaActual.Size = new System.Drawing.Size(195, 25);
             this.lblContrasenhaActual.TabIndex = 68;
-            this.lblContrasenhaActual.Text = "Contrasela actual";
+            this.lblContrasenhaActual.Text = "Contraseña actual:";
             // 
             // btnPublicaciones
             // 
@@ -273,7 +273,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 293);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(842, 169);
+            this.groupBox1.Size = new System.Drawing.Size(842, 145);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cambiar contraseña";
