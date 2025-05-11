@@ -32,7 +32,7 @@ namespace RedSocial.Interfaz
 
             if (usuario == null)
             {
-                Utilidad.MostrarMensajeInformacion("No se encontro el usuario en la base de datos.");
+                MessageBoxes.MostrarMensajeInformacion("No se encontro el usuario en la base de datos.");
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace RedSocial.Interfaz
 
             if (!HayCambios(nombre, telefono, correo, nueva, admin))
             {
-                Utilidad.MostrarMensajeInformacion("No se han realizado cambios en los datos del usuario");
+                MessageBoxes.MostrarMensajeInformacion("No se han realizado cambios en los datos del usuario");
                 return;
             }
 
@@ -105,7 +105,7 @@ namespace RedSocial.Interfaz
             {
                 if (nueva != confirmacion)
                 {
-                    Utilidad.MostrarMensajeInformacion("Por favor, verifica que ambas contraseñas sean iguales.");
+                    MessageBoxes.MostrarMensajeInformacion("Por favor, verifica que ambas contraseñas sean iguales.");
                     return;
                 }
                 nuevaHash = BCrypt.Net.BCrypt.HashPassword(nueva);
@@ -132,7 +132,7 @@ namespace RedSocial.Interfaz
         {
             if (!Regex.IsMatch(correo, patronCorreo))
             {
-                Utilidad.MostrarMensajeAdvertencia("El correo ingresado no es válido. Por favor, verifica el formato.");
+                MessageBoxes.MostrarMensajeAdvertencia("El correo ingresado no es válido. Por favor, verifica el formato.");
                 return false;
             }
             return true;
@@ -147,14 +147,14 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(actual))
             {
-                Utilidad.MostrarMensajeAdvertencia(mensaje);
+                MessageBoxes.MostrarMensajeAdvertencia(mensaje);
                 LimpiarCampos();
                 return false;
             }
 
             if (!BCrypt.Net.BCrypt.Verify(actual, SesionUsuario.Contrasenha))
             {
-                Utilidad.MostrarMensajeError("La contraseña actual no es correcta.");
+                MessageBoxes.MostrarMensajeError("La contraseña actual no es correcta.");
                 LimpiarCampos();
                 return false;
             }

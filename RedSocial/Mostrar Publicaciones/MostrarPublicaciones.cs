@@ -13,6 +13,7 @@ namespace RedSocial.Mostrar_Publicaciones
     {
         private ControllerComentario controllerComentario = new ControllerComentario();
         private ControllerPublicacion controllerPublicacion = new ControllerPublicacion();
+        private static int tamanhoPanel = 650;
 
         internal void MostrarPublicacionesFuncion(FlowLayoutPanel flpPublicaciones, string nombreUsuario = null)
         {
@@ -31,10 +32,10 @@ namespace RedSocial.Mostrar_Publicaciones
             {
                 Panel panel = new Panel
                 {
-                    Width = flpPublicaciones.Width - 30,
+                    Width = tamanhoPanel,
                     BorderStyle = BorderStyle.FixedSingle,
                     Margin = new Padding(5),
-                    BackColor = Color.White,
+                    BackColor = Color.Black,
                     AutoSize = true
                 };
 
@@ -43,7 +44,8 @@ namespace RedSocial.Mostrar_Publicaciones
                     Text = $"{fila["nombreAutor"]} - {Convert.ToDateTime(fila["fechaCreacion"]).ToString("g")}",
                     Font = new Font("Segoe UI", 9, FontStyle.Bold),
                     AutoSize = true,
-                    Location = new Point(10, 10)
+                    Location = new Point(10, 10),
+                    ForeColor = Color.MediumOrchid
                 };
 
                 Label lblContenido = new Label
@@ -51,7 +53,8 @@ namespace RedSocial.Mostrar_Publicaciones
                     Text = fila["contenido"].ToString(),
                     Font = new Font("Segoe UI", 9),
                     Location = new Point(10, 35),
-                    Size = new Size(panel.Width - 20, 40)
+                    Size = new Size(panel.Width - 20, 40),
+                    ForeColor = Color.MediumOrchid
                 };
 
                 Button btnComentar = CrearBoton("Comentar", new Point(10, 80), 30, 80, (s, e) =>
@@ -124,8 +127,12 @@ namespace RedSocial.Mostrar_Publicaciones
                 Text = texto,
                 Location = ubicacion,
                 Height = alto,
-                Width = ancho
+                Width = ancho,
+                BackColor = Color.Navy,
+                ForeColor = Color.White,
+                FlatStyle = FlatStyle.Flat
             };
+            boton.FlatAppearance.BorderSize = 0;
             boton.Click += evento;
             return boton;
         }
@@ -160,9 +167,9 @@ namespace RedSocial.Mostrar_Publicaciones
         {
             Panel panel = new Panel
             {
-                Width = flpPublicaciones.Width - 40,
+                Width = tamanhoPanel,
                 Height = 60,
-                BackColor = Color.LightGray,
+                BackColor = Color.FromArgb(30, 30, 30),
                 Margin = new Padding(3)
             };
 
@@ -170,7 +177,8 @@ namespace RedSocial.Mostrar_Publicaciones
             {
                 Text = $"{comentario["nombreAutor"]}: {comentario["contenido"]}",
                 AutoSize = true,
-                Location = new Point(5, 5)
+                Location = new Point(5, 5),
+                ForeColor = Color.Plum
             };
 
             panel.Controls.Add(lblComentario);

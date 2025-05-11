@@ -36,17 +36,22 @@
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(12, 60);
+            this.txtComentario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtComentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentario.ForeColor = System.Drawing.Color.White;
+            this.txtComentario.Location = new System.Drawing.Point(15, 46);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(381, 122);
+            this.txtComentario.Size = new System.Drawing.Size(393, 122);
             this.txtComentario.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 10);
+            this.label1.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 25);
             this.label1.TabIndex = 6;
@@ -54,31 +59,38 @@
             // 
             // btnPublicarComentario
             // 
+            this.btnPublicarComentario.BackColor = System.Drawing.Color.Navy;
+            this.btnPublicarComentario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPublicarComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPublicarComentario.Location = new System.Drawing.Point(12, 242);
+            this.btnPublicarComentario.ForeColor = System.Drawing.Color.White;
+            this.btnPublicarComentario.Location = new System.Drawing.Point(12, 194);
             this.btnPublicarComentario.Name = "btnPublicarComentario";
-            this.btnPublicarComentario.Size = new System.Drawing.Size(225, 33);
+            this.btnPublicarComentario.Size = new System.Drawing.Size(236, 51);
             this.btnPublicarComentario.TabIndex = 5;
             this.btnPublicarComentario.Text = "Publicar comentario";
-            this.btnPublicarComentario.UseVisualStyleBackColor = true;
+            this.btnPublicarComentario.UseVisualStyleBackColor = false;
             this.btnPublicarComentario.Click += new System.EventHandler(this.btnPublicarComentario_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Navy;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(260, 242);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(266, 194);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(130, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(142, 51);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Comentar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(420, 323);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(420, 267);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPublicarComentario);

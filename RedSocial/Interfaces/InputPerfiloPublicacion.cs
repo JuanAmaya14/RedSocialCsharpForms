@@ -39,7 +39,7 @@ namespace RedSocial.Interfaz
 
             if (nombre == null)
             {
-                Utilidad.MostrarMensajeAdvertencia("Ingrese un nombre de usuario válido.");
+                MessageBoxes.MostrarMensajeAdvertencia("Ingrese un nombre de usuario válido.");
                 return;
             }
 
@@ -47,7 +47,7 @@ namespace RedSocial.Interfaz
 
             if (usuario == null)
             {
-                Utilidad.MostrarMensajeInformacion($"No se encontro ningun usuario con el nombre \"{nombre}\".");
+                MessageBoxes.MostrarMensajeInformacion($"No se encontro ningun usuario con el nombre \"{nombre}\".");
                 return;
             }
 
@@ -80,6 +80,5 @@ namespace RedSocial.Interfaz
         {
             txtNombre.Clear();
         }
-
     }
 }

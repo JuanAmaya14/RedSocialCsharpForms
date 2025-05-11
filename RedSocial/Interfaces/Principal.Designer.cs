@@ -45,13 +45,14 @@
             // flpPublicaciones
             // 
             this.flpPublicaciones.AutoScroll = true;
-            this.flpPublicaciones.Location = new System.Drawing.Point(0, 28);
+            this.flpPublicaciones.Location = new System.Drawing.Point(0, 30);
             this.flpPublicaciones.Name = "flpPublicaciones";
-            this.flpPublicaciones.Size = new System.Drawing.Size(848, 460);
+            this.flpPublicaciones.Size = new System.Drawing.Size(934, 466);
             this.flpPublicaciones.TabIndex = 0;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Navy;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.publicarToolStripMenuItem,
@@ -60,20 +61,24 @@
             this.cerrarSesionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(848, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(934, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // publicarToolStripMenuItem
             // 
+            this.publicarToolStripMenuItem.BackColor = System.Drawing.Color.Indigo;
             this.publicarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPostToolStripMenuItem});
+            this.publicarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
             this.publicarToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.publicarToolStripMenuItem.Text = "Publicar";
             // 
             // nuevoPostToolStripMenuItem
             // 
+            this.nuevoPostToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.nuevoPostToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.nuevoPostToolStripMenuItem.Name = "nuevoPostToolStripMenuItem";
             this.nuevoPostToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
             this.nuevoPostToolStripMenuItem.Text = "Nuevo post";
@@ -81,15 +86,19 @@
             // 
             // usuarioToolStripMenuItem
             // 
+            this.usuarioToolStripMenuItem.BackColor = System.Drawing.Color.Indigo;
             this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.perfilToolStripMenuItem,
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // perfilToolStripMenuItem
             // 
+            this.perfilToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.perfilToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
             this.perfilToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.perfilToolStripMenuItem.Text = "Perfil";
@@ -97,6 +106,8 @@
             // 
             // buscarPublicacionDeUnUsuarioToolStripMenuItem
             // 
+            this.buscarPublicacionDeUnUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.buscarPublicacionDeUnUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Name = "buscarPublicacionDeUnUsuarioToolStripMenuItem";
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Text = "Buscar publicacion de un usuario";
@@ -104,29 +115,37 @@
             // 
             // administradorToolStripMenuItem
             // 
+            this.administradorToolStripMenuItem.BackColor = System.Drawing.Color.Indigo;
             this.administradorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buscarUsuarioToolStripMenuItem,
             this.auditoriasUsuarioToolStripMenuItem});
+            this.administradorToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.administradorToolStripMenuItem.Name = "administradorToolStripMenuItem";
             this.administradorToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
             this.administradorToolStripMenuItem.Text = "Administrador";
             // 
             // buscarUsuarioToolStripMenuItem
             // 
+            this.buscarUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.buscarUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.buscarUsuarioToolStripMenuItem.Name = "buscarUsuarioToolStripMenuItem";
-            this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.buscarUsuarioToolStripMenuItem.Text = "Buscar usuario";
             this.buscarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.buscarUsuarioToolStripMenuItem_Click);
             // 
             // auditoriasUsuarioToolStripMenuItem
             // 
+            this.auditoriasUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
+            this.auditoriasUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.auditoriasUsuarioToolStripMenuItem.Name = "auditoriasUsuarioToolStripMenuItem";
-            this.auditoriasUsuarioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.auditoriasUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.auditoriasUsuarioToolStripMenuItem.Text = "Auditorias usuario";
             this.auditoriasUsuarioToolStripMenuItem.Click += new System.EventHandler(this.auditoriasUsuarioToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
+            this.cerrarSesionToolStripMenuItem.BackColor = System.Drawing.Color.Indigo;
+            this.cerrarSesionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
             this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
@@ -136,7 +155,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(848, 488);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(934, 496);
             this.Controls.Add(this.flpPublicaciones);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -154,8 +174,6 @@
         }
 
         #endregion
-
-        internal System.Windows.Forms.FlowLayoutPanel flpPublicaciones;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem publicarToolStripMenuItem;
@@ -166,5 +184,6 @@
         private System.Windows.Forms.ToolStripMenuItem buscarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem auditoriasUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem perfilToolStripMenuItem;
+        internal System.Windows.Forms.FlowLayoutPanel flpPublicaciones;
     }
 }

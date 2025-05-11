@@ -2,6 +2,7 @@
 using RedSocial.Mostrar_Publicaciones;
 using RedSocial.Sesion;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RedSocial.Interfaz
@@ -16,6 +17,7 @@ namespace RedSocial.Interfaz
         {
             InitializeComponent();
             this.inicioSesion = inicioSesion;
+            menuStrip1.Renderer = new RenderizadorPersonalizado();
 
             InitializeTooltips();
         }
@@ -103,5 +105,6 @@ namespace RedSocial.Interfaz
             this.Hide();
             perfil.Show();
         }
+
     }
 }

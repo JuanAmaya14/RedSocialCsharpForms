@@ -42,19 +42,19 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(telefono) || string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(contrasenha) || string.IsNullOrWhiteSpace(confirmarContrasenha))
             {
-                Utilidad.MostrarMensajeAdvertencia("Por favor, complete todos los campos.");
+                MessageBoxes.MostrarMensajeAdvertencia("Por favor, complete todos los campos.");
                 return;
             }
 
             if (!Regex.IsMatch(correo, patronCorreo))
             {
-                Utilidad.MostrarMensajeAdvertencia("El correo no es valido");
+                MessageBoxes.MostrarMensajeAdvertencia("El correo no es valido");
                 return;
             }
 
             if (contrasenha != confirmarContrasenha)
             {
-                Utilidad.MostrarMensajeAdvertencia("Las contraseñas no coinciden.");
+                MessageBoxes.MostrarMensajeAdvertencia("Las contraseñas no coinciden.");
                 return;
             }
 

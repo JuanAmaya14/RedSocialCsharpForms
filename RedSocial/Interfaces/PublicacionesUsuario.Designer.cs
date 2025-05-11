@@ -34,13 +34,16 @@
             // 
             // btnAtras
             // 
+            this.btnAtras.BackColor = System.Drawing.Color.Navy;
+            this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.White;
             this.btnAtras.Location = new System.Drawing.Point(12, 12);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(128, 39);
             this.btnAtras.TabIndex = 55;
             this.btnAtras.Text = "Atras";
-            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // flpPublicaciones
@@ -49,14 +52,15 @@
             this.flpPublicaciones.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.flpPublicaciones.Location = new System.Drawing.Point(0, 58);
             this.flpPublicaciones.Name = "flpPublicaciones";
-            this.flpPublicaciones.Size = new System.Drawing.Size(885, 467);
+            this.flpPublicaciones.Size = new System.Drawing.Size(934, 467);
             this.flpPublicaciones.TabIndex = 56;
             // 
             // PublicacionesUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 525);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(934, 525);
             this.Controls.Add(this.flpPublicaciones);
             this.Controls.Add(this.btnAtras);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

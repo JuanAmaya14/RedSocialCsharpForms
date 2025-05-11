@@ -34,7 +34,7 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(contenido))
             {
-                Utilidad.MostrarMensajeAdvertencia("El contenido no puede estar vacío.");
+                MessageBoxes.MostrarMensajeAdvertencia("El contenido no puede estar vacío.");
                 return;
             }
 

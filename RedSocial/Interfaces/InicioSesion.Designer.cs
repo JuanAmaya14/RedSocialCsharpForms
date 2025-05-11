@@ -40,6 +40,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.MediumOrchid;
             this.lblNombre.Location = new System.Drawing.Point(74, 37);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(94, 25);
@@ -48,7 +49,11 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.ForeColor = System.Drawing.Color.White;
             this.txtNombre.Location = new System.Drawing.Point(186, 32);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
@@ -57,7 +62,11 @@
             // 
             // txtContrasenha
             // 
+            this.txtContrasenha.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtContrasenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContrasenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtContrasenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenha.ForeColor = System.Drawing.Color.White;
             this.txtContrasenha.Location = new System.Drawing.Point(186, 131);
             this.txtContrasenha.MaxLength = 255;
             this.txtContrasenha.Name = "txtContrasenha";
@@ -69,6 +78,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumOrchid;
             this.label2.Location = new System.Drawing.Point(37, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 25);
@@ -77,37 +87,45 @@
             // 
             // btnInicioSesion
             // 
+            this.btnInicioSesion.BackColor = System.Drawing.Color.Navy;
+            this.btnInicioSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInicioSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicioSesion.ForeColor = System.Drawing.Color.White;
             this.btnInicioSesion.Location = new System.Drawing.Point(40, 219);
             this.btnInicioSesion.Name = "btnInicioSesion";
             this.btnInicioSesion.Size = new System.Drawing.Size(182, 44);
             this.btnInicioSesion.TabIndex = 4;
             this.btnInicioSesion.Text = "Iniciar Sesion";
-            this.btnInicioSesion.UseVisualStyleBackColor = true;
+            this.btnInicioSesion.UseVisualStyleBackColor = false;
             this.btnInicioSesion.Click += new System.EventHandler(this.btnInicioSesion_Click);
             // 
             // btnRegistrarse
             // 
+            this.btnRegistrarse.BackColor = System.Drawing.Color.Navy;
+            this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarse.ForeColor = System.Drawing.Color.White;
             this.btnRegistrarse.Location = new System.Drawing.Point(316, 219);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(123, 44);
             this.btnRegistrarse.TabIndex = 5;
             this.btnRegistrarse.Text = "Registro";
-            this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 334);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(498, 295);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnInicioSesion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtContrasenha);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "InicioSesion";

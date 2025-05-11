@@ -28,14 +28,14 @@ namespace RedSocial
 
 
                     comando.ExecuteNonQuery();
-                    Utilidad.MostrarMensajeConfirmacion("Usuario registrado correctamente, por favor inicie sesion");
+                    MessageBoxes.MostrarMensajeConfirmacion("Usuario registrado correctamente, por favor inicie sesion");
 
                     return true;
                 }
             }
             catch (MySqlException ex)
             {
-                Utilidad.MostrarMensajeError("Error al registrar el usuario: " + ex.Message);
+                MessageBoxes.MostrarMensajeError("Error al registrar el usuario: " + ex.Message);
                 return false;
             }
         }
@@ -57,13 +57,13 @@ namespace RedSocial
                     comando.Parameters.AddWithValue("p_administrador", usuario.Administrador);
 
                     comando.ExecuteNonQuery();
-                    Utilidad.MostrarMensajeConfirmacion("Usuario actualizado correctamente");
+                    MessageBoxes.MostrarMensajeConfirmacion("Usuario actualizado correctamente");
                     return true;
                 }
             }
             catch (MySqlException ex)
             {
-                Utilidad.MostrarMensajeError("Error al actualizar el usuario: " + ex.Message);
+                MessageBoxes.MostrarMensajeError("Error al actualizar el usuario: " + ex.Message);
                 return false;
             }
         }

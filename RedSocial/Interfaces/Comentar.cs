@@ -34,7 +34,7 @@ namespace RedSocial.Interfaz
             string contenido = string.IsNullOrWhiteSpace(txtComentario.Text) ? null : txtComentario.Text;
             if (string.IsNullOrWhiteSpace(contenido))
             {
-                Utilidad.MostrarMensajeAdvertencia("Por favor complete el contenido del comentario.");
+                MessageBoxes.MostrarMensajeAdvertencia("Por favor complete el contenido del comentario.");
                 return;
             }
 
@@ -43,13 +43,13 @@ namespace RedSocial.Interfaz
 
             if (mensaje == "El comentario fue publicado correctamente")
             {
-                Utilidad.MostrarMensajeInformacion(mensaje);
+                MessageBoxes.MostrarMensajeInformacion(mensaje);
                 txtComentario.Clear();
                 this.Close();
             }
             else
             {
-                Utilidad.MostrarMensajeError("Error al publicar el comentario: " + mensaje);
+                MessageBoxes.MostrarMensajeError("Error al publicar el comentario: " + mensaje);
             }
 
         }

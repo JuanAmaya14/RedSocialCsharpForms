@@ -38,6 +38,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumOrchid;
             this.label1.Location = new System.Drawing.Point(103, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 25);
@@ -46,7 +47,10 @@
             // 
             // txtContenido
             // 
+            this.txtContenido.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtContenido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContenido.ForeColor = System.Drawing.Color.White;
             this.txtContenido.Location = new System.Drawing.Point(108, 116);
             this.txtContenido.Multiline = true;
             this.txtContenido.Name = "txtContenido";
@@ -55,30 +59,37 @@
             // 
             // btAtras
             // 
+            this.btAtras.BackColor = System.Drawing.Color.Navy;
+            this.btAtras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAtras.ForeColor = System.Drawing.Color.White;
             this.btAtras.Location = new System.Drawing.Point(12, 12);
             this.btAtras.Name = "btAtras";
-            this.btAtras.Size = new System.Drawing.Size(111, 48);
+            this.btAtras.Size = new System.Drawing.Size(123, 54);
             this.btAtras.TabIndex = 9;
             this.btAtras.Text = "Atras";
-            this.btAtras.UseVisualStyleBackColor = true;
+            this.btAtras.UseVisualStyleBackColor = false;
             this.btAtras.Click += new System.EventHandler(this.btAtras_Click);
             // 
             // btnPublicar
             // 
+            this.btnPublicar.BackColor = System.Drawing.Color.Navy;
+            this.btnPublicar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPublicar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPublicar.Location = new System.Drawing.Point(313, 384);
+            this.btnPublicar.ForeColor = System.Drawing.Color.White;
+            this.btnPublicar.Location = new System.Drawing.Point(311, 384);
             this.btnPublicar.Name = "btnPublicar";
-            this.btnPublicar.Size = new System.Drawing.Size(142, 36);
+            this.btnPublicar.Size = new System.Drawing.Size(154, 57);
             this.btnPublicar.TabIndex = 10;
             this.btnPublicar.Text = "Publicar";
-            this.btnPublicar.UseVisualStyleBackColor = true;
+            this.btnPublicar.UseVisualStyleBackColor = false;
             this.btnPublicar.Click += new System.EventHandler(this.btnPublicar_Click);
             // 
             // CrearPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnPublicar);
             this.Controls.Add(this.btAtras);
