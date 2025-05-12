@@ -36,24 +36,24 @@
             // 
             // txtComentario
             // 
-            this.txtComentario.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtComentario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtComentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComentario.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComentario.ForeColor = System.Drawing.Color.White;
             this.txtComentario.Location = new System.Drawing.Point(15, 46);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
-            this.txtComentario.Size = new System.Drawing.Size(393, 122);
+            this.txtComentario.Size = new System.Drawing.Size(437, 122);
             this.txtComentario.TabIndex = 7;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumOrchid;
             this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 25);
+            this.label1.Size = new System.Drawing.Size(120, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Comentario";
             // 
@@ -61,11 +61,12 @@
             // 
             this.btnPublicarComentario.BackColor = System.Drawing.Color.Navy;
             this.btnPublicarComentario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPublicarComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublicarComentario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPublicarComentario.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPublicarComentario.ForeColor = System.Drawing.Color.White;
             this.btnPublicarComentario.Location = new System.Drawing.Point(12, 194);
             this.btnPublicarComentario.Name = "btnPublicarComentario";
-            this.btnPublicarComentario.Size = new System.Drawing.Size(236, 51);
+            this.btnPublicarComentario.Size = new System.Drawing.Size(271, 51);
             this.btnPublicarComentario.TabIndex = 5;
             this.btnPublicarComentario.Text = "Publicar comentario";
             this.btnPublicarComentario.UseVisualStyleBackColor = false;
@@ -75,9 +76,10 @@
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Navy;
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancelar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(266, 194);
+            this.btnCancelar.Location = new System.Drawing.Point(310, 194);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(142, 51);
             this.btnCancelar.TabIndex = 4;
@@ -90,7 +92,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(420, 267);
+            this.ClientSize = new System.Drawing.Size(464, 267);
             this.Controls.Add(this.txtComentario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPublicarComentario);

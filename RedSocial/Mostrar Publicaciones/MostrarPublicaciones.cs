@@ -14,6 +14,7 @@ namespace RedSocial.Mostrar_Publicaciones
         private ControllerComentario controllerComentario = new ControllerComentario();
         private ControllerPublicacion controllerPublicacion = new ControllerPublicacion();
         private static int tamanhoPanel = 650;
+        private readonly Font fuenteConsolas = new Font("Consolas", 9, FontStyle.Bold);
 
         internal void MostrarPublicacionesFuncion(FlowLayoutPanel flpPublicaciones, string nombreUsuario = null)
         {
@@ -36,13 +37,14 @@ namespace RedSocial.Mostrar_Publicaciones
                     BorderStyle = BorderStyle.FixedSingle,
                     Margin = new Padding(5),
                     BackColor = Color.Black,
-                    AutoSize = true
+                    AutoSize = true,
+                    Font = fuenteConsolas
                 };
 
                 Label lblEncabezado = new Label
                 {
                     Text = $"{fila["nombreAutor"]} - {Convert.ToDateTime(fila["fechaCreacion"]).ToString("g")}",
-                    Font = new Font("Segoe UI", 9, FontStyle.Bold),
+                    Font = fuenteConsolas,
                     AutoSize = true,
                     Location = new Point(10, 10),
                     ForeColor = Color.MediumOrchid
@@ -51,7 +53,7 @@ namespace RedSocial.Mostrar_Publicaciones
                 Label lblContenido = new Label
                 {
                     Text = fila["contenido"].ToString(),
-                    Font = new Font("Segoe UI", 9),
+                    Font = fuenteConsolas,
                     Location = new Point(10, 35),
                     Size = new Size(panel.Width - 20, 40),
                     ForeColor = Color.MediumOrchid
@@ -91,8 +93,12 @@ namespace RedSocial.Mostrar_Publicaciones
                 {
                     Button btnEliminar = CrearBoton("Eliminar", new Point(100, 80), 30, 80, (s, e) =>
                     {
-                        controllerPublicacion.Eliminar(Convert.ToInt32(fila["idPublicacion"]));
-                        MostrarPublicacionesFuncion(flpPublicaciones);
+                        var confirm = MessageBox.Show("¿Estás seguro de eliminar esta publicación?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (confirm == DialogResult.Yes)
+                        {
+                            controllerPublicacion.Eliminar(Convert.ToInt32(fila["idPublicacion"]));
+                            MostrarPublicacionesFuncion(flpPublicaciones);
+                        }
                     });
 
                     panel.Controls.Add(btnEliminar);
@@ -104,7 +110,8 @@ namespace RedSocial.Mostrar_Publicaciones
                     Width = panel.Width - 20,
                     AutoSize = true,
                     FlowDirection = FlowDirection.TopDown,
-                    WrapContents = false
+                    WrapContents = false,
+                    Font = fuenteConsolas,
                 };
 
                 var comentariosFiltrados = comentarios.AsEnumerable()
@@ -128,38 +135,48 @@ namespace RedSocial.Mostrar_Publicaciones
                 Location = ubicacion,
                 Height = alto,
                 Width = ancho,
+                Font = fuenteConsolas,
                 BackColor = Color.Navy,
                 ForeColor = Color.White,
-                FlatStyle = FlatStyle.Flat
+                FlatStyle = FlatStyle.Popup
             };
             boton.FlatAppearance.BorderSize = 0;
             boton.Click += evento;
             return boton;
         }
-
         private void EditarContenido(string contenidoActual, Action<string> onSave)
         {
-            string nuevoTexto = Microsoft.VisualBasic.Interaction.InputBox("Editar contenido:", "Editar", contenidoActual);
-
-            if (nuevoTexto == contenidoActual || string.IsNullOrWhiteSpace(nuevoTexto))
+            while (true)
             {
-                MessageBox.Show("El contenido no puede estar vacío o igual al anterior.");
-                return;
-            }
+                string nuevoTexto = Microsoft.VisualBasic.Interaction.InputBox("Editar contenido:", "Editar", contenidoActual);
 
-            onSave(nuevoTexto);
+                if (nuevoTexto == "" && !string.IsNullOrWhiteSpace(contenidoActual))
+                {
+                    return;
+                }
+
+                if (nuevoTexto == contenidoActual || string.IsNullOrWhiteSpace(nuevoTexto))
+                {
+                    MessageBox.Show("El contenido no puede estar vacío o igual al anterior.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    continue;
+                }
+
+                onSave(nuevoTexto);
+                break;
+            }
         }
+
 
         private void MostrarResultado((string, bool) resultado, string tipo, FlowLayoutPanel flpPublicaciones)
         {
             if (resultado.Item2)
             {
-                MessageBox.Show($"{tipo} editado correctamente");
+                MessageBoxes.MostrarMensajeConfirmacion($"{tipo} editado correctamente");
                 MostrarPublicacionesFuncion(flpPublicaciones);
             }
             else
             {
-                MessageBox.Show($"Error al editar {tipo.ToLower()}: {resultado.Item1}");
+                MessageBoxes.MostrarMensajeError($"{tipo} no editado: {resultado.Item1}");
             }
         }
 
@@ -170,7 +187,8 @@ namespace RedSocial.Mostrar_Publicaciones
                 Width = tamanhoPanel,
                 Height = 60,
                 BackColor = Color.FromArgb(30, 30, 30),
-                Margin = new Padding(3)
+                Margin = new Padding(3),
+                Font = fuenteConsolas
             };
 
             Label lblComentario = new Label
@@ -178,6 +196,7 @@ namespace RedSocial.Mostrar_Publicaciones
                 Text = $"{comentario["nombreAutor"]}: {comentario["contenido"]}",
                 AutoSize = true,
                 Location = new Point(5, 5),
+                Font = fuenteConsolas,
                 ForeColor = Color.Plum
             };
 
@@ -203,9 +222,9 @@ namespace RedSocial.Mostrar_Publicaciones
 
             if (idAutor == SesionUsuario.IdUsuario || SesionUsuario.Administrador)
             {
-                panel.Controls.Add(CrearBoton("Eliminar", new Point(70, 30), 25, 60, (s, e) =>
+                panel.Controls.Add(CrearBoton("Eliminar", new Point(70, 30), 25, 80, (s, e) =>
                 {
-                    var confirm = MessageBox.Show("¿Estás seguro de eliminar este comentario?", "Confirmar", MessageBoxButtons.YesNo);
+                    var confirm = MessageBox.Show("¿Estás seguro de eliminar este comentario?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (confirm == DialogResult.Yes)
                     {
                         controllerComentario.Eliminar(Convert.ToInt32(comentario["idComentario"]));

@@ -59,7 +59,8 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Navy;
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModificar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(354, 561);
             this.btnModificar.Name = "btnModificar";
@@ -73,7 +74,8 @@
             // 
             this.btnAtras.BackColor = System.Drawing.Color.Navy;
             this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.ForeColor = System.Drawing.Color.White;
             this.btnAtras.Location = new System.Drawing.Point(12, 8);
             this.btnAtras.Name = "btnAtras";
@@ -88,97 +90,97 @@
             this.txtContrasenhaNueva.BackColor = System.Drawing.SystemColors.Control;
             this.txtContrasenhaNueva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContrasenhaNueva.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContrasenhaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenhaNueva.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenhaNueva.ForeColor = System.Drawing.Color.Black;
-            this.txtContrasenhaNueva.Location = new System.Drawing.Point(236, 97);
+            this.txtContrasenhaNueva.Location = new System.Drawing.Point(206, 97);
             this.txtContrasenhaNueva.MaxLength = 255;
             this.txtContrasenhaNueva.Name = "txtContrasenhaNueva";
             this.txtContrasenhaNueva.PasswordChar = '*';
-            this.txtContrasenhaNueva.Size = new System.Drawing.Size(209, 30);
+            this.txtContrasenhaNueva.Size = new System.Drawing.Size(209, 31);
             this.txtContrasenhaNueva.TabIndex = 65;
             // 
             // lblContrasenhaNueva
             // 
             this.lblContrasenhaNueva.AutoSize = true;
-            this.lblContrasenhaNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasenhaNueva.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContrasenhaNueva.ForeColor = System.Drawing.Color.White;
-            this.lblContrasenhaNueva.Location = new System.Drawing.Point(231, 69);
+            this.lblContrasenhaNueva.Location = new System.Drawing.Point(202, 71);
             this.lblContrasenhaNueva.Name = "lblContrasenhaNueva";
-            this.lblContrasenhaNueva.Size = new System.Drawing.Size(196, 25);
+            this.lblContrasenhaNueva.Size = new System.Drawing.Size(197, 23);
             this.lblContrasenhaNueva.TabIndex = 64;
             this.lblContrasenhaNueva.Text = "Contraseña nueva:";
             // 
             // txtCorreo
             // 
-            this.txtCorreo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.ForeColor = System.Drawing.Color.White;
+            this.txtCorreo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.ForeColor = System.Drawing.Color.Black;
             this.txtCorreo.Location = new System.Drawing.Point(147, 191);
             this.txtCorreo.MaxLength = 255;
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(310, 30);
+            this.txtCorreo.Size = new System.Drawing.Size(310, 31);
             this.txtCorreo.TabIndex = 63;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MediumOrchid;
             this.label3.Location = new System.Drawing.Point(32, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 25);
+            this.label3.Size = new System.Drawing.Size(87, 23);
             this.label3.TabIndex = 62;
             this.label3.Text = "Correo:";
             // 
             // txtTelefono
             // 
-            this.txtTelefono.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelefono.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.White;
             this.txtTelefono.Location = new System.Drawing.Point(147, 133);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(209, 30);
+            this.txtTelefono.Size = new System.Drawing.Size(209, 31);
             this.txtTelefono.TabIndex = 61;
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.label2.Location = new System.Drawing.Point(23, 138);
+            this.label2.Location = new System.Drawing.Point(12, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 25);
+            this.label2.Size = new System.Drawing.Size(109, 23);
             this.label2.TabIndex = 60;
             this.label2.Text = "Telefono:";
             // 
             // txtNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.White;
             this.txtNombre.Location = new System.Drawing.Point(147, 72);
             this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(209, 30);
+            this.txtNombre.Size = new System.Drawing.Size(209, 31);
             this.txtNombre.TabIndex = 59;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumOrchid;
-            this.label1.Location = new System.Drawing.Point(23, 72);
+            this.label1.Location = new System.Drawing.Point(32, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 25);
+            this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 58;
             this.label1.Text = "Nombre:";
             // 
@@ -187,48 +189,48 @@
             this.txtConfirmarContra.BackColor = System.Drawing.SystemColors.Control;
             this.txtConfirmarContra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConfirmarContra.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConfirmarContra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmarContra.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmarContra.ForeColor = System.Drawing.Color.Black;
-            this.txtConfirmarContra.Location = new System.Drawing.Point(511, 97);
+            this.txtConfirmarContra.Location = new System.Drawing.Point(483, 97);
             this.txtConfirmarContra.MaxLength = 255;
             this.txtConfirmarContra.Name = "txtConfirmarContra";
             this.txtConfirmarContra.PasswordChar = '*';
-            this.txtConfirmarContra.Size = new System.Drawing.Size(209, 30);
+            this.txtConfirmarContra.Size = new System.Drawing.Size(209, 31);
             this.txtConfirmarContra.TabIndex = 67;
             // 
             // lblConfirmarContraNueva
             // 
             this.lblConfirmarContraNueva.AutoSize = true;
-            this.lblConfirmarContraNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConfirmarContraNueva.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConfirmarContraNueva.ForeColor = System.Drawing.Color.White;
-            this.lblConfirmarContraNueva.Location = new System.Drawing.Point(506, 69);
+            this.lblConfirmarContraNueva.Location = new System.Drawing.Point(479, 71);
             this.lblConfirmarContraNueva.Name = "lblConfirmarContraNueva";
-            this.lblConfirmarContraNueva.Size = new System.Drawing.Size(291, 25);
+            this.lblConfirmarContraNueva.Size = new System.Drawing.Size(307, 23);
             this.lblConfirmarContraNueva.TabIndex = 66;
             this.lblConfirmarContraNueva.Text = "Confirmar contraseña nueva:";
             // 
             // txtContrasenhaActual
             // 
-            this.txtContrasenhaActual.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtContrasenhaActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtContrasenhaActual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContrasenhaActual.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContrasenhaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenhaActual.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenhaActual.ForeColor = System.Drawing.Color.White;
-            this.txtContrasenhaActual.Location = new System.Drawing.Point(216, 495);
+            this.txtContrasenhaActual.Location = new System.Drawing.Point(231, 496);
             this.txtContrasenhaActual.MaxLength = 255;
             this.txtContrasenhaActual.Name = "txtContrasenhaActual";
             this.txtContrasenhaActual.PasswordChar = '*';
-            this.txtContrasenhaActual.Size = new System.Drawing.Size(209, 30);
+            this.txtContrasenhaActual.Size = new System.Drawing.Size(209, 31);
             this.txtContrasenhaActual.TabIndex = 69;
             // 
             // lblContrasenhaActual
             // 
             this.lblContrasenhaActual.AutoSize = true;
-            this.lblContrasenhaActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContrasenhaActual.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblContrasenhaActual.ForeColor = System.Drawing.Color.MediumOrchid;
             this.lblContrasenhaActual.Location = new System.Drawing.Point(4, 498);
             this.lblContrasenhaActual.Name = "lblContrasenhaActual";
-            this.lblContrasenhaActual.Size = new System.Drawing.Size(195, 25);
+            this.lblContrasenhaActual.Size = new System.Drawing.Size(208, 23);
             this.lblContrasenhaActual.TabIndex = 68;
             this.lblContrasenhaActual.Text = "Contraseña actual:";
             // 
@@ -236,11 +238,12 @@
             // 
             this.btnPublicaciones.BackColor = System.Drawing.Color.Navy;
             this.btnPublicaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPublicaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPublicaciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPublicaciones.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPublicaciones.ForeColor = System.Drawing.Color.White;
-            this.btnPublicaciones.Location = new System.Drawing.Point(640, 12);
+            this.btnPublicaciones.Location = new System.Drawing.Point(624, 12);
             this.btnPublicaciones.Name = "btnPublicaciones";
-            this.btnPublicaciones.Size = new System.Drawing.Size(214, 48);
+            this.btnPublicaciones.Size = new System.Drawing.Size(230, 48);
             this.btnPublicaciones.TabIndex = 70;
             this.btnPublicaciones.Text = "Ver publicaciones";
             this.btnPublicaciones.UseVisualStyleBackColor = false;
@@ -249,11 +252,11 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.MediumOrchid;
             this.lblFecha.Location = new System.Drawing.Point(375, 108);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(181, 22);
+            this.lblFecha.Size = new System.Drawing.Size(171, 20);
             this.lblFecha.TabIndex = 71;
             this.lblFecha.Text = "Fecha de creacion:";
             // 
@@ -261,11 +264,12 @@
             // 
             this.btnBorrarUsuario.BackColor = System.Drawing.Color.Navy;
             this.btnBorrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBorrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBorrarUsuario.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnBorrarUsuario.Location = new System.Drawing.Point(442, 12);
+            this.btnBorrarUsuario.Location = new System.Drawing.Point(399, 12);
             this.btnBorrarUsuario.Name = "btnBorrarUsuario";
-            this.btnBorrarUsuario.Size = new System.Drawing.Size(190, 48);
+            this.btnBorrarUsuario.Size = new System.Drawing.Size(219, 48);
             this.btnBorrarUsuario.TabIndex = 72;
             this.btnBorrarUsuario.Text = "Borrar Usuario";
             this.btnBorrarUsuario.UseVisualStyleBackColor = false;
@@ -276,7 +280,7 @@
             this.groupBoxAdministrador.BackColor = System.Drawing.Color.DarkMagenta;
             this.groupBoxAdministrador.Controls.Add(this.radioAdminNo);
             this.groupBoxAdministrador.Controls.Add(this.radioAdminSi);
-            this.groupBoxAdministrador.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxAdministrador.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAdministrador.ForeColor = System.Drawing.Color.White;
             this.groupBoxAdministrador.Location = new System.Drawing.Point(537, 196);
             this.groupBoxAdministrador.Name = "groupBoxAdministrador";
@@ -289,9 +293,10 @@
             // 
             this.radioAdminNo.AutoSize = true;
             this.radioAdminNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioAdminNo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAdminNo.Location = new System.Drawing.Point(109, 39);
             this.radioAdminNo.Name = "radioAdminNo";
-            this.radioAdminNo.Size = new System.Drawing.Size(60, 29);
+            this.radioAdminNo.Size = new System.Drawing.Size(53, 27);
             this.radioAdminNo.TabIndex = 1;
             this.radioAdminNo.TabStop = true;
             this.radioAdminNo.Text = "No";
@@ -301,9 +306,10 @@
             // 
             this.radioAdminSi.AutoSize = true;
             this.radioAdminSi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioAdminSi.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioAdminSi.Location = new System.Drawing.Point(28, 39);
             this.radioAdminSi.Name = "radioAdminSi";
-            this.radioAdminSi.Size = new System.Drawing.Size(53, 29);
+            this.radioAdminSi.Size = new System.Drawing.Size(53, 27);
             this.radioAdminSi.TabIndex = 0;
             this.radioAdminSi.TabStop = true;
             this.radioAdminSi.Text = "Si";
@@ -318,7 +324,7 @@
             this.groupBox1.Controls.Add(this.lblContrasenhaNueva);
             this.groupBox1.Controls.Add(this.txtContrasenhaNueva);
             this.groupBox1.Controls.Add(this.txtConfirmarContra);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 293);
             this.groupBox1.Name = "groupBox1";
@@ -331,11 +337,11 @@
             // 
             this.radioContraNo.AutoSize = true;
             this.radioContraNo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioContraNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioContraNo.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioContraNo.ForeColor = System.Drawing.Color.White;
             this.radioContraNo.Location = new System.Drawing.Point(147, 34);
             this.radioContraNo.Name = "radioContraNo";
-            this.radioContraNo.Size = new System.Drawing.Size(60, 29);
+            this.radioContraNo.Size = new System.Drawing.Size(53, 27);
             this.radioContraNo.TabIndex = 1;
             this.radioContraNo.TabStop = true;
             this.radioContraNo.Text = "No";
@@ -346,11 +352,11 @@
             // 
             this.radioContraSi.AutoSize = true;
             this.radioContraSi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioContraSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioContraSi.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioContraSi.ForeColor = System.Drawing.Color.White;
             this.radioContraSi.Location = new System.Drawing.Point(26, 34);
             this.radioContraSi.Name = "radioContraSi";
-            this.radioContraSi.Size = new System.Drawing.Size(53, 29);
+            this.radioContraSi.Size = new System.Drawing.Size(53, 27);
             this.radioContraSi.TabIndex = 0;
             this.radioContraSi.TabStop = true;
             this.radioContraSi.Text = "Si";

@@ -19,14 +19,6 @@ namespace RedSocial.Modelos
             this.fechaCreacion = DateTime.Now;
         }
 
-        public Comentario(int idCometario, int idPublicacion, int idAutor, string contenido)
-        {
-            this.idCometario = idCometario;
-            this.idPublicacion = idPublicacion;
-            this.idAutor = idAutor;
-            this.contenido = contenido;
-        }
-
         public int IdPublicacion { get => idPublicacion; set => idPublicacion = value; }
         public int IdAutor { get => idAutor; set => idAutor = value; }
         public string Contenido { get => contenido; set => contenido = value; }

@@ -34,7 +34,7 @@ namespace RedSocial.Interfaz
 
             if (string.IsNullOrWhiteSpace(contenido))
             {
-                MessageBoxes.MostrarMensajeAdvertencia("El contenido no puede estar vacío.");
+                MessageBoxes.MostrarMensajeAdvertencia("El contenido de la publicacion no puede estar vacio");
                 return;
             }
 
@@ -42,13 +42,14 @@ namespace RedSocial.Interfaz
 
             if (mensaje == "Publicacion registrada correctamente")
             {
-                MessageBox.Show(mensaje, "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxes.MostrarMensajeConfirmacion(mensaje);
                 txtContenido.Clear();
-                this.Close();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Error al registrar la publicacion: " + mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxes.MostrarMensajeError(mensaje);
+                txtContenido.Clear();
             }
 
             txtContenido.Clear();

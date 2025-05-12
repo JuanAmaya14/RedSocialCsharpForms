@@ -38,11 +38,15 @@ namespace RedSocial.Interfaz
 
             CompletarDatos();
 
-            if (!SesionUsuario.Administrador)
+            if (SesionUsuario.Administrador && usuario.Nombre == SesionUsuario.Nombre)
             {
                 groupBoxAdministrador.Visible = false;
             }
 
+            if (!SesionUsuario.Administrador)
+            {
+                groupBoxAdministrador.Visible = false;
+            }
 
             lblFecha.Text = $"Fecha de creación: {usuario.FechaCreacion}";
 

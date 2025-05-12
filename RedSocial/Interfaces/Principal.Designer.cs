@@ -45,14 +45,15 @@
             // flpPublicaciones
             // 
             this.flpPublicaciones.AutoScroll = true;
-            this.flpPublicaciones.Location = new System.Drawing.Point(0, 30);
+            this.flpPublicaciones.Location = new System.Drawing.Point(0, 29);
             this.flpPublicaciones.Name = "flpPublicaciones";
-            this.flpPublicaciones.Size = new System.Drawing.Size(934, 466);
+            this.flpPublicaciones.Size = new System.Drawing.Size(934, 467);
             this.flpPublicaciones.TabIndex = 0;
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Navy;
+            this.menuStrip1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.publicarToolStripMenuItem,
@@ -61,7 +62,7 @@
             this.cerrarSesionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(934, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(934, 26);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -70,9 +71,10 @@
             this.publicarToolStripMenuItem.BackColor = System.Drawing.Color.Indigo;
             this.publicarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoPostToolStripMenuItem});
+            this.publicarToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.publicarToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.publicarToolStripMenuItem.Name = "publicarToolStripMenuItem";
-            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.publicarToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.publicarToolStripMenuItem.Text = "Publicar";
             // 
             // nuevoPostToolStripMenuItem
@@ -80,7 +82,7 @@
             this.nuevoPostToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
             this.nuevoPostToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.nuevoPostToolStripMenuItem.Name = "nuevoPostToolStripMenuItem";
-            this.nuevoPostToolStripMenuItem.Size = new System.Drawing.Size(168, 26);
+            this.nuevoPostToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nuevoPostToolStripMenuItem.Text = "Nuevo post";
             this.nuevoPostToolStripMenuItem.Click += new System.EventHandler(this.nuevoPostToolStripMenuItem_Click);
             // 
@@ -90,9 +92,10 @@
             this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.perfilToolStripMenuItem,
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(78, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // perfilToolStripMenuItem
@@ -100,7 +103,7 @@
             this.perfilToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
             this.perfilToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.perfilToolStripMenuItem.Name = "perfilToolStripMenuItem";
-            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.perfilToolStripMenuItem.Size = new System.Drawing.Size(346, 26);
             this.perfilToolStripMenuItem.Text = "Perfil";
             this.perfilToolStripMenuItem.Click += new System.EventHandler(this.perfilToolStripMenuItem_Click);
             // 
@@ -109,7 +112,7 @@
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Name = "buscarPublicacionDeUnUsuarioToolStripMenuItem";
-            this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Size = new System.Drawing.Size(346, 26);
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Text = "Buscar publicacion de un usuario";
             this.buscarPublicacionDeUnUsuarioToolStripMenuItem.Click += new System.EventHandler(this.buscarPublicacionDeUnUsuarioToolStripMenuItem_Click);
             // 
@@ -119,9 +122,10 @@
             this.administradorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.buscarUsuarioToolStripMenuItem,
             this.auditoriasUsuarioToolStripMenuItem});
+            this.administradorToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.administradorToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.administradorToolStripMenuItem.Name = "administradorToolStripMenuItem";
-            this.administradorToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.administradorToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.administradorToolStripMenuItem.Text = "Administrador";
             // 
             // buscarUsuarioToolStripMenuItem
@@ -129,7 +133,7 @@
             this.buscarUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
             this.buscarUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.buscarUsuarioToolStripMenuItem.Name = "buscarUsuarioToolStripMenuItem";
-            this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.buscarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.buscarUsuarioToolStripMenuItem.Text = "Buscar usuario";
             this.buscarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.buscarUsuarioToolStripMenuItem_Click);
             // 
@@ -138,16 +142,17 @@
             this.auditoriasUsuarioToolStripMenuItem.BackColor = System.Drawing.Color.MediumBlue;
             this.auditoriasUsuarioToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.auditoriasUsuarioToolStripMenuItem.Name = "auditoriasUsuarioToolStripMenuItem";
-            this.auditoriasUsuarioToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.auditoriasUsuarioToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
             this.auditoriasUsuarioToolStripMenuItem.Text = "Auditorias usuario";
             this.auditoriasUsuarioToolStripMenuItem.Click += new System.EventHandler(this.auditoriasUsuarioToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.BackColor = System.Drawing.Color.Indigo;
+            this.cerrarSesionToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cerrarSesionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(108, 24);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 

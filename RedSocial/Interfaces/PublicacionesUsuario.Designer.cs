@@ -36,7 +36,8 @@
             // 
             this.btnAtras.BackColor = System.Drawing.Color.Navy;
             this.btnAtras.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAtras.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtras.ForeColor = System.Drawing.Color.White;
             this.btnAtras.Location = new System.Drawing.Point(12, 12);
             this.btnAtras.Name = "btnAtras";
