@@ -44,7 +44,6 @@ namespace RedSocial
             if (usuario != null)
             {
                 SesionUsuario.IniciarSesion(usuario);
-                MessageBoxes.MostrarMensajeConfirmacion("Bienvenido " + usuario.Nombre);
                 txtNombre.Clear();
                 txtContrasenha.Clear();
                 this.Hide();

@@ -1,5 +1,6 @@
 ﻿using ConexionAMySQL;
 using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
 namespace RedSocial.Controladores
@@ -11,34 +12,49 @@ namespace RedSocial.Controladores
 
         public DataTable Mostrar()
         {
-            using (MySqlConnection conn = conexion.AbrirConexionMySQL())
-            using (MySqlCommand comando = new MySqlCommand("SELECT * FROM View_ObtenerAuditorias", conn))
+            try
             {
-                comando.CommandType = CommandType.Text;
-                using (MySqlDataReader reader = comando.ExecuteReader())
+                using (MySqlConnection conn = conexion.AbrirConexionMySQL())
+                using (MySqlCommand comando = new MySqlCommand("SELECT * FROM View_ObtenerAuditorias", conn))
                 {
-                    DataTable tabla = new DataTable();
-                    tabla.Load(reader);
-                    return tabla;
+                    comando.CommandType = CommandType.Text;
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        DataTable tabla = new DataTable();
+                        tabla.Load(reader);
+                        return tabla;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxes.MostrarMensajeError(ex.Message);
+                return null;
             }
         }
 
         public DataTable MostrarPorId(int id)
         {
-            using (MySqlConnection conn = conexion.AbrirConexionMySQL())
-            using (MySqlCommand comando = new MySqlCommand("sp_ObtenerAuditoriasPorID", conn))
+            try
             {
-                comando.CommandType = CommandType.StoredProcedure;
-                comando.Parameters.AddWithValue("p_idUsuario", id);
-                using (MySqlDataReader reader = comando.ExecuteReader())
+                using (MySqlConnection conn = conexion.AbrirConexionMySQL())
+                using (MySqlCommand comando = new MySqlCommand("sp_ObtenerAuditoriasPorID", conn))
                 {
-                    DataTable tabla = new DataTable();
-                    tabla.Load(reader);
-                    return tabla;
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("p_idUsuario", id);
+                    using (MySqlDataReader reader = comando.ExecuteReader())
+                    {
+                        DataTable tabla = new DataTable();
+                        tabla.Load(reader);
+                        return tabla;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBoxes.MostrarMensajeError(ex.Message);
+                return null;
+            }
         }
-
     }
 }

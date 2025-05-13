@@ -38,18 +38,17 @@ namespace RedSocial.Interfaz
                 return;
             }
 
-            string mensaje = controllerComentario.Insertar(new Comentario(idPublicacion, SesionUsuario.IdUsuario, contenido));
+            bool mensaje = controllerComentario.Insertar(new Comentario(idPublicacion, SesionUsuario.IdUsuario, contenido));
 
 
-            if (mensaje == "El comentario fue publicado correctamente")
+            if (mensaje)
             {
-                MessageBoxes.MostrarMensajeInformacion(mensaje);
                 txtComentario.Clear();
                 this.Close();
             }
             else
             {
-                MessageBoxes.MostrarMensajeError("Error al publicar el comentario: " + mensaje);
+                return;
             }
 
         }

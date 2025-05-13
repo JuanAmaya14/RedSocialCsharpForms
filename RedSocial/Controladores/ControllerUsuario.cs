@@ -102,6 +102,8 @@ namespace RedSocial
                         bool contrasenaValida = BCrypt.Net.BCrypt.Verify(contrasenha, hashAlmacenado);
                         if (!contrasenaValida) return null;
 
+                        MessageBoxes.MostrarMensajeConfirmacion("Bienvenido " + row["nombre"].ToString());
+
                         return new Usuario(
                             Convert.ToInt32(row["idUsuario"]),
                             row["nombre"].ToString(),
@@ -116,7 +118,7 @@ namespace RedSocial
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error general: " + ex.Message);
+                MessageBoxes.MostrarMensajeError(ex.Message);
                 return null;
             }
         }
@@ -153,7 +155,7 @@ namespace RedSocial
             }
             catch (MySqlException ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                MessageBoxes.MostrarMensajeError(ex.Message);
                 return null;
             }
         }

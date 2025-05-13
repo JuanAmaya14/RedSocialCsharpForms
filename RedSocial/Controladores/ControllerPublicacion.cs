@@ -48,7 +48,7 @@ namespace RedSocial
             }
         }
 
-        public (string, bool) Editar(Publicacion publicacion)
+        public bool Editar(Publicacion publicacion)
         {
             try
             {
@@ -61,12 +61,13 @@ namespace RedSocial
                     comando.Parameters.AddWithValue("p_contenido", publicacion.Contenido);
 
                     comando.ExecuteNonQuery();
-                    return ("Fue actualizado correctamente.", true);
+                    return true;
                 }
             }
             catch (MySqlException ex)
             {
-                return (ex.Message, false);
+                MessageBoxes.MostrarMensajeError("Error al actualizar la publicación: " + ex.Message);
+                return false;
             }
         }
 

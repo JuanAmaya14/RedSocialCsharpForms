@@ -76,13 +76,13 @@ namespace RedSocial.Mostrar_Publicaciones
                     {
                         EditarContenido(fila["contenido"].ToString(), nuevoTexto =>
                         {
-                            var result = controllerPublicacion.Editar(new Publicacion
+                            bool resultado = controllerPublicacion.Editar(new Publicacion
                             {
                                 IdPublicacion = Convert.ToInt32(fila["idPublicacion"]),
                                 Contenido = nuevoTexto
                             });
 
-                            MostrarResultado(result, "Publicación", flpPublicaciones);
+                            MostrarResultado(resultado, "Publicacion", flpPublicaciones);
                         });
                     });
 
@@ -167,17 +167,14 @@ namespace RedSocial.Mostrar_Publicaciones
         }
 
 
-        private void MostrarResultado((string, bool) resultado, string tipo, FlowLayoutPanel flpPublicaciones)
+        private void MostrarResultado(bool resultado, string tipo, FlowLayoutPanel flpPublicaciones)
         {
-            if (resultado.Item2)
+            if (resultado)
             {
                 MessageBoxes.MostrarMensajeConfirmacion($"{tipo} editado correctamente");
                 MostrarPublicacionesFuncion(flpPublicaciones);
             }
-            else
-            {
-                MessageBoxes.MostrarMensajeError($"{tipo} no editado: {resultado.Item1}");
-            }
+
         }
 
         private Panel CrearComentarioPanel(DataRow comentario, FlowLayoutPanel flpPublicaciones)
@@ -210,12 +207,12 @@ namespace RedSocial.Mostrar_Publicaciones
                 {
                     EditarContenido(comentario["contenido"].ToString(), nuevoTexto =>
                     {
-                        var result = controllerComentario.Editar(new Publicacion
+                        bool resultado = controllerComentario.Editar(new Publicacion
                         {
                             IdPublicacion = Convert.ToInt32(comentario["idComentario"]),
                             Contenido = nuevoTexto
                         });
-                        MostrarResultado(result, "Comentario", flpPublicaciones);
+                        MostrarResultado(resultado, "Comentario", flpPublicaciones);
                     });
                 }));
             }

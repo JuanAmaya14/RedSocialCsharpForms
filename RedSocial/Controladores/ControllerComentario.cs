@@ -26,7 +26,7 @@ namespace RedSocial
             }
         }
 
-        public string Insertar(Comentario comentario)
+        public bool Insertar(Comentario comentario)
         {
             try
             {
@@ -40,16 +40,18 @@ namespace RedSocial
                     comando.Parameters.AddWithValue("p_fechaCreacion", comentario.FechaCreacion);
 
                     comando.ExecuteNonQuery();
-                    return "El comentario fue publicado correctamente";
+                    MessageBoxes.MostrarMensajeConfirmacion("El comentario fue publicado correctamente");
+                    return true;
                 }
             }
             catch (MySqlException ex)
             {
-                return ex.Message;
+                MessageBoxes.MostrarMensajeError("Error al publicar el comentario: " + ex.Message);
+                return false;
             }
         }
 
-        public (string, bool) Editar(Publicacion publicacion)
+        public bool Editar(Publicacion publicacion)
         {
             try
             {
@@ -62,12 +64,13 @@ namespace RedSocial
                     comando.Parameters.AddWithValue("p_contenido", publicacion.Contenido);
 
                     comando.ExecuteNonQuery();
-                    return ("Fue actualizado correctamente.", true);
+                    return true;
                 }
             }
             catch (MySqlException ex)
             {
-                return (ex.Message, false);
+                MessageBoxes.MostrarMensajeError("Error al editar el comentario: " + ex.Message);
+                return false;
             }
         }
 

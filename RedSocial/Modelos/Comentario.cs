@@ -5,7 +5,6 @@ namespace RedSocial.Modelos
     class Comentario
     {
 
-        private int idCometario;
         private int idPublicacion;
         private int idAutor;
         private string contenido;
