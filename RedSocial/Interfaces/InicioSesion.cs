@@ -3,6 +3,8 @@ using RedSocial.Modelos;
 using RedSocial.Sesion;
 using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace RedSocial
 {
@@ -14,7 +16,9 @@ namespace RedSocial
         {
             InitializeComponent();
 
-            ToolTip toolTip = new ToolTip();
+            checkBoxContrasenha.Checked = false;
+
+            txtContrasenha.UseSystemPasswordChar = true;
 
             InitializeTooltips();
         }
@@ -71,5 +75,18 @@ namespace RedSocial
             Application.Exit();
         }
 
+        private void checkBoxContrasenha_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkBoxContrasenha.Checked)
+            {
+                txtContrasenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContrasenha.UseSystemPasswordChar = true;
+            }
+
+        }
     }
 }

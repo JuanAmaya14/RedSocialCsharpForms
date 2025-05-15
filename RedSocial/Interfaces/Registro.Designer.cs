@@ -40,6 +40,8 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.txtConfirmarContra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.checkBoxContrasenha = new System.Windows.Forms.CheckBox();
+            this.checkBoxContrasenhaConf = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,7 +124,6 @@
             this.txtContrasenha.Location = new System.Drawing.Point(295, 277);
             this.txtContrasenha.MaxLength = 255;
             this.txtContrasenha.Name = "txtContrasenha";
-            this.txtContrasenha.PasswordChar = '*';
             this.txtContrasenha.Size = new System.Drawing.Size(209, 31);
             this.txtContrasenha.TabIndex = 7;
             // 
@@ -176,7 +177,6 @@
             this.txtConfirmarContra.Location = new System.Drawing.Point(295, 345);
             this.txtConfirmarContra.MaxLength = 255;
             this.txtConfirmarContra.Name = "txtConfirmarContra";
-            this.txtConfirmarContra.PasswordChar = '*';
             this.txtConfirmarContra.Size = new System.Drawing.Size(209, 31);
             this.txtConfirmarContra.TabIndex = 11;
             // 
@@ -191,12 +191,42 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Confirmar contraseña:";
             // 
+            // checkBoxContrasenha
+            // 
+            this.checkBoxContrasenha.AutoSize = true;
+            this.checkBoxContrasenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxContrasenha.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.checkBoxContrasenha.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.checkBoxContrasenha.Location = new System.Drawing.Point(510, 281);
+            this.checkBoxContrasenha.Name = "checkBoxContrasenha";
+            this.checkBoxContrasenha.Size = new System.Drawing.Size(109, 27);
+            this.checkBoxContrasenha.TabIndex = 12;
+            this.checkBoxContrasenha.Text = "Mostrar";
+            this.checkBoxContrasenha.UseVisualStyleBackColor = true;
+            this.checkBoxContrasenha.CheckedChanged += new System.EventHandler(this.checkBoxContrasenha_CheckedChanged);
+            // 
+            // checkBoxContrasenhaConf
+            // 
+            this.checkBoxContrasenhaConf.AutoSize = true;
+            this.checkBoxContrasenhaConf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxContrasenhaConf.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.checkBoxContrasenhaConf.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.checkBoxContrasenhaConf.Location = new System.Drawing.Point(510, 349);
+            this.checkBoxContrasenhaConf.Name = "checkBoxContrasenhaConf";
+            this.checkBoxContrasenhaConf.Size = new System.Drawing.Size(109, 27);
+            this.checkBoxContrasenhaConf.TabIndex = 13;
+            this.checkBoxContrasenhaConf.Text = "Mostrar";
+            this.checkBoxContrasenhaConf.UseVisualStyleBackColor = true;
+            this.checkBoxContrasenhaConf.CheckedChanged += new System.EventHandler(this.checkBoxContrasenhaConf_CheckedChanged);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(628, 512);
+            this.Controls.Add(this.checkBoxContrasenhaConf);
+            this.Controls.Add(this.checkBoxContrasenha);
             this.Controls.Add(this.txtConfirmarContra);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRegistrar);
@@ -235,5 +265,7 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.TextBox txtConfirmarContra;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox checkBoxContrasenha;
+        private System.Windows.Forms.CheckBox checkBoxContrasenhaConf;
     }
 }

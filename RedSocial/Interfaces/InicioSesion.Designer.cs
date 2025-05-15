@@ -34,6 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnInicioSesion = new System.Windows.Forms.Button();
             this.btnRegistrarse = new System.Windows.Forms.Button();
+            this.checkBoxContrasenha = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -70,7 +71,6 @@
             this.txtContrasenha.Location = new System.Drawing.Point(186, 131);
             this.txtContrasenha.MaxLength = 255;
             this.txtContrasenha.Name = "txtContrasenha";
-            this.txtContrasenha.PasswordChar = '*';
             this.txtContrasenha.Size = new System.Drawing.Size(168, 31);
             this.txtContrasenha.TabIndex = 2;
             // 
@@ -92,7 +92,7 @@
             this.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInicioSesion.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicioSesion.ForeColor = System.Drawing.Color.White;
-            this.btnInicioSesion.Location = new System.Drawing.Point(40, 209);
+            this.btnInicioSesion.Location = new System.Drawing.Point(64, 209);
             this.btnInicioSesion.Name = "btnInicioSesion";
             this.btnInicioSesion.Size = new System.Drawing.Size(200, 54);
             this.btnInicioSesion.TabIndex = 4;
@@ -107,7 +107,7 @@
             this.btnRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistrarse.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrarse.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarse.Location = new System.Drawing.Point(305, 209);
+            this.btnRegistrarse.Location = new System.Drawing.Point(350, 209);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(140, 54);
             this.btnRegistrarse.TabIndex = 5;
@@ -115,12 +115,27 @@
             this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
+            // checkBoxContrasenha
+            // 
+            this.checkBoxContrasenha.AutoSize = true;
+            this.checkBoxContrasenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxContrasenha.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.checkBoxContrasenha.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.checkBoxContrasenha.Location = new System.Drawing.Point(367, 135);
+            this.checkBoxContrasenha.Name = "checkBoxContrasenha";
+            this.checkBoxContrasenha.Size = new System.Drawing.Size(109, 27);
+            this.checkBoxContrasenha.TabIndex = 6;
+            this.checkBoxContrasenha.Text = "Mostrar";
+            this.checkBoxContrasenha.UseVisualStyleBackColor = true;
+            this.checkBoxContrasenha.CheckedChanged += new System.EventHandler(this.checkBoxContrasenha_CheckedChanged);
+            // 
             // InicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(498, 295);
+            this.ClientSize = new System.Drawing.Size(519, 295);
+            this.Controls.Add(this.checkBoxContrasenha);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.btnInicioSesion);
             this.Controls.Add(this.label2);
@@ -146,6 +161,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnInicioSesion;
         private System.Windows.Forms.Button btnRegistrarse;
+        private System.Windows.Forms.CheckBox checkBoxContrasenha;
     }
 }
 

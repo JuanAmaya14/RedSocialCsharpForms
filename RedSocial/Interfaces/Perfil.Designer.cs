@@ -49,8 +49,11 @@
             this.radioAdminNo = new System.Windows.Forms.RadioButton();
             this.radioAdminSi = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxContrasenhaConf = new System.Windows.Forms.CheckBox();
+            this.checkBoxContrasenha = new System.Windows.Forms.CheckBox();
             this.radioContraNo = new System.Windows.Forms.RadioButton();
             this.radioContraSi = new System.Windows.Forms.RadioButton();
+            this.checkBoxContraActual = new System.Windows.Forms.CheckBox();
             this.groupBoxAdministrador.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +65,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(354, 561);
+            this.btnModificar.Location = new System.Drawing.Point(369, 559);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(143, 63);
             this.btnModificar.TabIndex = 53;
@@ -95,7 +98,6 @@
             this.txtContrasenhaNueva.Location = new System.Drawing.Point(206, 97);
             this.txtContrasenhaNueva.MaxLength = 255;
             this.txtContrasenhaNueva.Name = "txtContrasenhaNueva";
-            this.txtContrasenhaNueva.PasswordChar = '*';
             this.txtContrasenhaNueva.Size = new System.Drawing.Size(209, 31);
             this.txtContrasenhaNueva.TabIndex = 65;
             // 
@@ -194,7 +196,6 @@
             this.txtConfirmarContra.Location = new System.Drawing.Point(483, 97);
             this.txtConfirmarContra.MaxLength = 255;
             this.txtConfirmarContra.Name = "txtConfirmarContra";
-            this.txtConfirmarContra.PasswordChar = '*';
             this.txtConfirmarContra.Size = new System.Drawing.Size(209, 31);
             this.txtConfirmarContra.TabIndex = 67;
             // 
@@ -219,7 +220,6 @@
             this.txtContrasenhaActual.Location = new System.Drawing.Point(231, 496);
             this.txtContrasenhaActual.MaxLength = 255;
             this.txtContrasenhaActual.Name = "txtContrasenhaActual";
-            this.txtContrasenhaActual.PasswordChar = '*';
             this.txtContrasenhaActual.Size = new System.Drawing.Size(209, 31);
             this.txtContrasenhaActual.TabIndex = 69;
             // 
@@ -318,6 +318,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkMagenta;
+            this.groupBox1.Controls.Add(this.checkBoxContrasenhaConf);
+            this.groupBox1.Controls.Add(this.checkBoxContrasenha);
             this.groupBox1.Controls.Add(this.radioContraNo);
             this.groupBox1.Controls.Add(this.radioContraSi);
             this.groupBox1.Controls.Add(this.lblConfirmarContraNueva);
@@ -328,10 +330,38 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(12, 293);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(842, 145);
+            this.groupBox1.Size = new System.Drawing.Size(842, 174);
             this.groupBox1.TabIndex = 74;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cambiar contraseña";
+            // 
+            // checkBoxContrasenhaConf
+            // 
+            this.checkBoxContrasenhaConf.AutoSize = true;
+            this.checkBoxContrasenhaConf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxContrasenhaConf.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.checkBoxContrasenhaConf.ForeColor = System.Drawing.Color.White;
+            this.checkBoxContrasenhaConf.Location = new System.Drawing.Point(483, 134);
+            this.checkBoxContrasenhaConf.Name = "checkBoxContrasenhaConf";
+            this.checkBoxContrasenhaConf.Size = new System.Drawing.Size(109, 27);
+            this.checkBoxContrasenhaConf.TabIndex = 69;
+            this.checkBoxContrasenhaConf.Text = "Mostrar";
+            this.checkBoxContrasenhaConf.UseVisualStyleBackColor = true;
+            this.checkBoxContrasenhaConf.CheckedChanged += new System.EventHandler(this.checkBoxContrasenhaConf_CheckedChanged);
+            // 
+            // checkBoxContrasenha
+            // 
+            this.checkBoxContrasenha.AutoSize = true;
+            this.checkBoxContrasenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxContrasenha.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.checkBoxContrasenha.ForeColor = System.Drawing.Color.White;
+            this.checkBoxContrasenha.Location = new System.Drawing.Point(206, 134);
+            this.checkBoxContrasenha.Name = "checkBoxContrasenha";
+            this.checkBoxContrasenha.Size = new System.Drawing.Size(109, 27);
+            this.checkBoxContrasenha.TabIndex = 68;
+            this.checkBoxContrasenha.Text = "Mostrar";
+            this.checkBoxContrasenha.UseVisualStyleBackColor = true;
+            this.checkBoxContrasenha.CheckedChanged += new System.EventHandler(this.checkBoxContrasenha_CheckedChanged);
             // 
             // radioContraNo
             // 
@@ -363,12 +393,27 @@
             this.radioContraSi.UseVisualStyleBackColor = true;
             this.radioContraSi.CheckedChanged += new System.EventHandler(this.radioContraSi_CheckedChanged);
             // 
+            // checkBoxContraActual
+            // 
+            this.checkBoxContraActual.AutoSize = true;
+            this.checkBoxContraActual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxContraActual.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold);
+            this.checkBoxContraActual.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.checkBoxContraActual.Location = new System.Drawing.Point(446, 500);
+            this.checkBoxContraActual.Name = "checkBoxContraActual";
+            this.checkBoxContraActual.Size = new System.Drawing.Size(109, 27);
+            this.checkBoxContraActual.TabIndex = 75;
+            this.checkBoxContraActual.Text = "Mostrar";
+            this.checkBoxContraActual.UseVisualStyleBackColor = true;
+            this.checkBoxContraActual.CheckedChanged += new System.EventHandler(this.checkBoxContraActual_CheckedChanged);
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(866, 648);
+            this.ClientSize = new System.Drawing.Size(866, 647);
+            this.Controls.Add(this.checkBoxContraActual);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxAdministrador);
             this.Controls.Add(this.btnBorrarUsuario);
@@ -424,5 +469,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioContraNo;
         private System.Windows.Forms.RadioButton radioContraSi;
+        private System.Windows.Forms.CheckBox checkBoxContrasenhaConf;
+        private System.Windows.Forms.CheckBox checkBoxContrasenha;
+        private System.Windows.Forms.CheckBox checkBoxContraActual;
     }
 }

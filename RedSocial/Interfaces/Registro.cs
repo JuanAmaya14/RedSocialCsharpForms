@@ -15,6 +15,12 @@ namespace RedSocial.Interfaz
         public Registro(InicioSesion inicioSesion)
         {
             InitializeComponent();
+            checkBoxContrasenha.Checked = false;
+            checkBoxContrasenhaConf.Checked = false;
+
+            txtContrasenha.UseSystemPasswordChar = true;
+            txtConfirmarContra.UseSystemPasswordChar = true;
+
             this.inicioSesion = inicioSesion;
 
             InitializeTooltips();
@@ -110,6 +116,33 @@ namespace RedSocial.Interfaz
         private void Registro_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void checkBoxContrasenha_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkBoxContrasenha.Checked)
+            {
+                txtContrasenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContrasenha.UseSystemPasswordChar = true;
+            }
+
+        }
+
+        private void checkBoxContrasenhaConf_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxContrasenhaConf.Checked)
+            {
+                txtConfirmarContra.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtConfirmarContra.UseSystemPasswordChar = true;
+            }
+
         }
     }
 }

@@ -26,6 +26,14 @@ namespace RedSocial.Interfaz
             this.principal = principal;
             this.inicioSesion = inicioSesion;
 
+            checkBoxContrasenha.Checked = false;
+            checkBoxContrasenhaConf.Checked = false;
+            checkBoxContraActual.Checked = false;
+
+            txtContrasenhaNueva.UseSystemPasswordChar = true;
+            txtConfirmarContra.UseSystemPasswordChar = true;
+            txtContrasenhaActual.UseSystemPasswordChar = true;
+
             radioContraNo.Checked = true;
 
             usuario = controllerUsuario.MostrarNombre(nombre);
@@ -242,20 +250,63 @@ namespace RedSocial.Interfaz
 
         private void radioContraSi_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleContraseñaVisibility(true);
+            OcultarContrasenha(true);
         }
 
         private void radioContraNo_CheckedChanged(object sender, EventArgs e)
         {
-            ToggleContraseñaVisibility(false);
+            OcultarContrasenha(false);
         }
 
-        private void ToggleContraseñaVisibility(bool isVisible)
+        private void OcultarContrasenha(bool isVisible)
         {
             txtContrasenhaNueva.Visible = isVisible;
             lblContrasenhaNueva.Visible = isVisible;
             txtConfirmarContra.Visible = isVisible;
             lblConfirmarContraNueva.Visible = isVisible;
+            checkBoxContrasenha.Visible = isVisible;
+            checkBoxContrasenhaConf.Visible = isVisible;
+
+        }
+
+        private void checkBoxContrasenha_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (checkBoxContrasenha.Checked)
+            {
+                txtContrasenhaNueva.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContrasenhaNueva.UseSystemPasswordChar = true;
+            }
+
+
+        }
+
+        private void checkBoxContrasenhaConf_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxContrasenhaConf.Checked)
+            {
+                txtConfirmarContra.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtConfirmarContra.UseSystemPasswordChar = true;
+            }
+
+        }
+
+        private void checkBoxContraActual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxContraActual.Checked)
+            {
+                txtContrasenhaActual.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtContrasenhaActual.UseSystemPasswordChar = true;
+            }
         }
     }
 }
