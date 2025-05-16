@@ -61,6 +61,7 @@ namespace RedSocial.Interfaz
             {
                 SesionUsuario.CerrarSesion();
                 this.Hide();
+                inicioSesion.LimpiarCampos();
                 inicioSesion.Show();
             }
         }

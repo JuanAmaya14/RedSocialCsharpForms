@@ -78,6 +78,7 @@ namespace RedSocial.Interfaz
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
+            inicioSesion.LimpiarCampos();
             this.inicioSesion.Show();
         }
 

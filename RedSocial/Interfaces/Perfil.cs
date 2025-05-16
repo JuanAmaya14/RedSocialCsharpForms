@@ -190,6 +190,9 @@ namespace RedSocial.Interfaz
             txtContrasenhaActual.Clear();
             txtConfirmarContra.Clear();
             txtContrasenhaNueva.Clear();
+            checkBoxContrasenha.Checked = false;
+            checkBoxContrasenhaConf.Checked = false;
+            checkBoxContraActual.Checked = false;
         }
 
         private void btnPublicaciones_Click(object sender, EventArgs e)

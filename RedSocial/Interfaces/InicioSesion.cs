@@ -88,5 +88,14 @@ namespace RedSocial
             }
 
         }
+
+        public void LimpiarCampos()
+        {
+
+            checkBoxContrasenha.Checked = false;
+            txtContrasenha.Clear();
+            txtNombre.Clear();
+
+        }
     }
 }
