@@ -1,4 +1,6 @@
-﻿namespace ConexionAMySQL
+﻿using System;
+
+namespace ConexionAMySQL
 {
     public class ParametrosConexion
     {
@@ -18,7 +20,13 @@
         public string MYSQL_USER_H { get; } = "";
         public string MYSQL_PASSWORD_H { get; } = "";
 
-        // Constructor por defecto, que puede establecer el ambiente
+        // Propiedades de conexión local
+        public string MYSQL_HOST_L { get; } = "";
+        public string MYSQL_PORT_ { get; } = "3306";
+        public string MYSQL_DATABASE_L { get; } = "UsuariosForms";
+        public string MYSQL_USER_L { get; } = "";
+        public string MYSQL_PASSWORD_L { get; } = "";
+
         public ParametrosConexion(string ambiente)
         {
             Ambiente = ambiente;
@@ -26,13 +34,35 @@
 
         public string ObtenerCadenaConexion()
         {
-            string host = Ambiente == "U" ? MYSQL_HOST_U : MYSQL_HOST_H;
-            string port = Ambiente == "U" ? MYSQL_PORT_U : MYSQL_PORT_H;
-            string database = Ambiente == "U" ? MYSQL_DATABASE_U : MYSQL_DATABASE_H;
-            string user = Ambiente == "U" ? MYSQL_USER_U : MYSQL_USER_H;
-            string password = Ambiente == "U" ? MYSQL_PASSWORD_U : MYSQL_PASSWORD_H;
+            string host = "", port = "", database = "", user = "", password = "";
+
+            switch (Ambiente)
+            {
+                case "U":
+                    host = MYSQL_HOST_U;
+                    port = MYSQL_PORT_U;
+                    database = MYSQL_DATABASE_U;
+                    user = MYSQL_USER_U;
+                    password = MYSQL_PASSWORD_U;
+                    break;
+                case "H":
+                    host = MYSQL_HOST_H;
+                    port = MYSQL_PORT_H;
+                    database = MYSQL_DATABASE_H;
+                    user = MYSQL_USER_H;
+                    password = MYSQL_PASSWORD_H;
+                    break;
+                case "L":
+                    host = MYSQL_HOST_L;
+                    port = MYSQL_PORT_;
+                    database = MYSQL_DATABASE_L;
+                    user = MYSQL_USER_L;
+                    password = MYSQL_PASSWORD_L;
+                    break;
+            }
 
             return $"Server={host};Port={port};Database={database};User={user};Password={password};";
         }
+
     }
 }
