@@ -20,7 +20,7 @@
 
         // Propiedades de conexión local
         public string MYSQL_HOST_L { get; } = "";
-        public string MYSQL_PORT_ { get; } = "3306";
+        public string MYSQL_PORT_L { get; } = "3306";
         public string MYSQL_DATABASE_L { get; } = "UsuariosForms";
         public string MYSQL_USER_L { get; } = "";
         public string MYSQL_PASSWORD_L { get; } = "";
@@ -52,7 +52,7 @@
                     break;
                 case "L":
                     host = MYSQL_HOST_L;
-                    port = MYSQL_PORT_;
+                    port = MYSQL_PORT_L;
                     database = MYSQL_DATABASE_L;
                     user = MYSQL_USER_L;
                     password = MYSQL_PASSWORD_L;

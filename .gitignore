@@ -2,3 +2,5 @@ ParametrosConexion.cs
 
 .vs/
 
+bin/
+obj/
