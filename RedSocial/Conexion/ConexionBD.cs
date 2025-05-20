@@ -13,7 +13,7 @@ namespace ConexionAMySQL
         {
             try
             {
-                var config = new ParametrosConexion("C");
+                var config = new ParametrosConexion("U");
                 string cadenaMySQL = config.ObtenerCadenaConexion();
 
                 var conexion = new MySqlConnection(cadenaMySQL);
