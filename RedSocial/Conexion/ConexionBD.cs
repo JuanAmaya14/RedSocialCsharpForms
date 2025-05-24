@@ -18,7 +18,7 @@ namespace ConexionAMySQL
                  * C = casa
                  * L = local
                  */
-                var config = new ParametrosConexion("L");
+                var config = new ParametrosConexion("C");
                 string cadenaMySQL = config.ObtenerCadenaConexion();
 
                 var conexion = new MySqlConnection(cadenaMySQL);

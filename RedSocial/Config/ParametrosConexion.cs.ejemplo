@@ -43,7 +43,7 @@
                     user = MYSQL_USER_U;
                     password = MYSQL_PASSWORD_U;
                     break;
-                case "H":
+                case "C":
                     host = MYSQL_HOST_C;
                     port = MYSQL_PORT_C;
                     database = MYSQL_DATABASE_C;
