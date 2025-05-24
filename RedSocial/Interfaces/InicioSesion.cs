@@ -3,7 +3,6 @@ using RedSocial.Modelos;
 using RedSocial.Sesion;
 using System;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace RedSocial

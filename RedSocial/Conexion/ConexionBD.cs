@@ -13,7 +13,12 @@ namespace ConexionAMySQL
         {
             try
             {
-                var config = new ParametrosConexion("U");
+                /*
+                 * U = universidad
+                 * C = casa
+                 * L = local
+                 */
+                var config = new ParametrosConexion("L");
                 string cadenaMySQL = config.ObtenerCadenaConexion();
 
                 var conexion = new MySqlConnection(cadenaMySQL);

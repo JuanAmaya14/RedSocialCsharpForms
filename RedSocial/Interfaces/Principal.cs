@@ -2,7 +2,6 @@
 using RedSocial.Mostrar_Publicaciones;
 using RedSocial.Sesion;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace RedSocial.Interfaz

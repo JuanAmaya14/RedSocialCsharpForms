@@ -7,21 +7,21 @@
         // Propiedades de conexión para la universidad
         public string MYSQL_HOST_U { get; } = "";
         public string MYSQL_PORT_U { get; } = "3306";
-        public string MYSQL_DATABASE_U { get; } = "UsuariosForms";
+        public string MYSQL_DATABASE_U { get; } = "RedSocial";
         public string MYSQL_USER_U { get; } = "";
         public string MYSQL_PASSWORD_U { get; } = "";
 
         // Propiedades de conexión para la casa
-        public string MYSQL_HOST_H { get; } = "";
-        public string MYSQL_PORT_H { get; } = "3306";
-        public string MYSQL_DATABASE_H { get; } = "UsuariosForms";
-        public string MYSQL_USER_H { get; } = "";
-        public string MYSQL_PASSWORD_H { get; } = "";
+        public string MYSQL_HOST_C { get; } = "";
+        public string MYSQL_PORT_C { get; } = "3306";
+        public string MYSQL_DATABASE_C { get; } = "RedSocial";
+        public string MYSQL_USER_C { get; } = "";
+        public string MYSQL_PASSWORD_C { get; } = "";
 
         // Propiedades de conexión local
-        public string MYSQL_HOST_L { get; } = "";
-        public string MYSQL_PORT_L { get; } = "3306";
-        public string MYSQL_DATABASE_L { get; } = "UsuariosForms";
+        public string MYSQL_HOST_L { get; } = "127.0.0.1";
+        public string MYSQL_PORT_ { get; } = "3306";
+        public string MYSQL_DATABASE_L { get; } = "RedSocial";
         public string MYSQL_USER_L { get; } = "";
         public string MYSQL_PASSWORD_L { get; } = "";
 
@@ -44,15 +44,15 @@
                     password = MYSQL_PASSWORD_U;
                     break;
                 case "H":
-                    host = MYSQL_HOST_H;
-                    port = MYSQL_PORT_H;
-                    database = MYSQL_DATABASE_H;
-                    user = MYSQL_USER_H;
-                    password = MYSQL_PASSWORD_H;
+                    host = MYSQL_HOST_C;
+                    port = MYSQL_PORT_C;
+                    database = MYSQL_DATABASE_C;
+                    user = MYSQL_USER_C;
+                    password = MYSQL_PASSWORD_C;
                     break;
                 case "L":
                     host = MYSQL_HOST_L;
-                    port = MYSQL_PORT_L;
+                    port = MYSQL_PORT_;
                     database = MYSQL_DATABASE_L;
                     user = MYSQL_USER_L;
                     password = MYSQL_PASSWORD_L;
